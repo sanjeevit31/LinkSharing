@@ -1,0 +1,47 @@
+<html>
+<head>
+    <script>
+        function validateForm()
+        {
+         var name=document.getElementById('name').value
+            if(name==''){
+                alert("Name Can't Empty")
+                return false
+            }
+            else
+            {
+                var age=document.getElementById('age').value
+                if(age=='')
+                {
+                    alert('age Can not Be Empty')
+                return false
+                }
+                else
+                {
+                    var d=!isNaN(age)
+
+                    if(d && age<=35 && age>=18){
+
+                    return true
+                    }
+                    else{
+                        alert('Enter age greater than or equals to 18 or less than or equals to 35')
+                        return false
+                    }
+
+               }
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+<form name="myForm" action="success.html" onsubmit="return validateForm()" method="post">
+    First name: <input type="text" name="name" id="name"><br>
+    Age:<input type="text" name="age" id="age"><br>
+    <input type="submit" value="submit">
+</form>
+</body>
+
+</html>

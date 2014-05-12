@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<form name="myform" id="myform" action="'success.html">
+
+   Name:<input type="text" value="" id="name"/></br>
+   Age:<input type="text" value="" id="age"/></br>
+   <input type="submit" onsubmit=false />
+</form>
+<script type="text/javascript">
+
+    function validate()
+    {alert()
+        var name=document.getElementById('name').value
+        var age=document.getElementById('age').value
+        alert(name)
+        if(name=='')
+        {
+        alert('enter your name')
+        return false
+        }
+        else
+        {
+        if(Nan(age) || age<18){
+        alert('enter age greater than or equals to 18 ')
+            return false
+        }
+            else
+        return true
+        }
+
+    }
+    //Allow submission of form only if the user has entered his name(not empty) and  age is greater than or equals to 18
+</script>
+</body>
+</html>
