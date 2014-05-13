@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="MySQL - LinkSharing@localhost" uuid="7864bf23-b42c-454b-b4b1-022b7f644156">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="MySQL - @localhost [3]" uuid="47de770f-0d3f-4f2c-911b-e678f914d6d3">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+</component>
