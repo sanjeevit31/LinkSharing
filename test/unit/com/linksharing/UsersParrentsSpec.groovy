@@ -6,8 +6,8 @@ import spock.lang.Specification
 /**
  * See the API for {@link grails.test.mixin.domain.DomainClassUnitTestMixin} for usage instructions
  */
-@TestFor(Users)
-class UsersSpec extends Specification {
+@TestFor(UsersParrents)
+class UsersParrentsSpec extends Specification {
 
     def setup() {
     }
@@ -16,12 +16,5 @@ class UsersSpec extends Specification {
     }
 
     void "test something"() {
-    }
-    def index(){
-        Services ss=new Services();
-        Users u=new Users()
-        u.name=ss.name
-        u.mob=ss.mob;
-        u.save()
     }
 }

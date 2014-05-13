@@ -1,22 +1,17 @@
 package com.linksharing
 
-class Users {
-    String firstName
-    String middleName
-    String lastName
+class Users extends UsersParrents {
+
     Integer age
     String sex
     Integer mob
-   public void show(){
-       Services service=new Services();
-       setFirstName(service.name)
+    Integer salary
 
-   }
 
 
     static constraints = {
     }
     static mapping = {
-        table('uuuuuuuuuuuuuuuuuu')
+        table('childUser')
     }
 }

@@ -1,0 +1,17 @@
+
+.formdiv{
+    height: 500px;
+    width: 200px;
+    border-color: #5fd621;
+    border: solid;
+
+}
+#formdiv{
+    height: 400px;
+    width: 220px;
+    border-color: #d63019;
+    border: solid;
+    margin-left: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

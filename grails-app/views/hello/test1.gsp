@@ -9,7 +9,7 @@
 <html>
 <head>
     <meta name="layout"
-          content="test"/>
+          content="linksharing"/>
     <title>I am a test
     page</title>
     <link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css">
