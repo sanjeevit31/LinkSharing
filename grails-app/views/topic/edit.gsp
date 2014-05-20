@@ -1,4 +1,4 @@
-<%@ page import="linksharing.Topic" %>
+<%@ page import="com.linksharing.Topic" %>
 <!DOCTYPE html>
 <html>
 	<head>

@@ -44,7 +44,6 @@
 			</table>
 			<div class="pagination">
 				<g:paginate total="${userInstanceCount ?: 0}" />
-                <g:countrySelect></g:countrySelect>
 			</div>
 		</div>
 	</body>

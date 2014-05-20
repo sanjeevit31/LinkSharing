@@ -19,17 +19,29 @@
 </head>
 
 <body >
-<ls:date format="MM-dd-yyyy" value="${new Date()}"></ls:date>
 
-%{--
-</g:form>
+
 <div id="formdiv">
+    </br>
+<center>WELCOME  TO  LINK  SHARING
+   <g:form controller="users" action="userLogin" method="POST"  name="loginform">
+       </br></br>
+         <p style="color: red">  ${errorMessage}</p>
 
-   <g:form controller="users" action="index" method="POST" id="loginform" name="loginform" contenteditable="false" autocomplete="on" draggable="true" >
-      <g:textField name="name" id="name" draggable="" placeholder="enter user name"></g:textField>
-       <g:passwordField  name="pass" id="pass" placeholder="enter password"></g:passwordField>
-       --
+
+      <g:textField name="name" placeholder="enter user name" required="yes"></g:textField></br>
+       <g:passwordField  name="password" placeholder="enter password" required="yes"></g:passwordField>
+       <g:checkBox name="keepMeLogin" value="${true}"></g:checkBox>Keep me signed in
+       <g:submitButton value="Submit" class="button_" name="submit"></g:submitButton>
+     <g:link action="forgotPassword">Forgot password?</g:link></br>
+       or</br>
+   </g:form>
+    <g:link name="registration"  action="usercreate">
+   <input type="button" class="button_" value="Create New User" name="registration" formaction="dghfvhdj"/>
+    </g:link>
+   %{-- <g:actionSubmit value="Create New User" class="button_" action="${g.link(controller: 'users',action: 'registration')}"></g:actionSubmit>--}%
+</center>
 </div>
---}%
+
 </body>
 </html>

@@ -1,5 +1,5 @@
 
-<%@ page import="linksharing.Topic" %>
+<%@ page import="com.linksharing.Topic" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -24,11 +24,17 @@
 			<thead>
 					<tr>
 					
-						<g:sortableColumn property="title" title="${message(code: 'topic.title.label', default: 'Title')}" />
-					
-						<g:sortableColumn property="age" title="${message(code: 'topic.age.label', default: 'Age')}" />
-					
 						<g:sortableColumn property="name" title="${message(code: 'topic.name.label', default: 'Name')}" />
+					
+						<g:sortableColumn property="summery" title="${message(code: 'topic.summery.label', default: 'Summery')}" />
+					
+						<g:sortableColumn property="dateCreated" title="${message(code: 'topic.dateCreated.label', default: 'Date Created')}" />
+					
+						<g:sortableColumn property="lastUpdated" title="${message(code: 'topic.lastUpdated.label', default: 'Last Updated')}" />
+					
+						<th><g:message code="topic.newUsers.label" default="New Users" /></th>
+					
+						<g:sortableColumn property="visibility" title="${message(code: 'topic.visibility.label', default: 'Visibility')}" />
 					
 					</tr>
 				</thead>
@@ -36,11 +42,17 @@
 				<g:each in="${topicInstanceList}" status="i" var="topicInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${topicInstance.id}">${fieldValue(bean: topicInstance, field: "title")}</g:link></td>
+						<td><g:link action="show" id="${topicInstance.id}">${fieldValue(bean: topicInstance, field: "name")}</g:link></td>
 					
-						<td>${fieldValue(bean: topicInstance, field: "age")}</td>
+						<td>${fieldValue(bean: topicInstance, field: "summery")}</td>
 					
-						<td>${fieldValue(bean: topicInstance, field: "name")}</td>
+						<td><g:formatDate date="${topicInstance.dateCreated}" /></td>
+					
+						<td><g:formatDate date="${topicInstance.lastUpdated}" /></td>
+					
+						<td>${fieldValue(bean: topicInstance, field: "newUsers")}</td>
+					
+						<td>${fieldValue(bean: topicInstance, field: "visibility")}</td>
 					
 					</tr>
 				</g:each>

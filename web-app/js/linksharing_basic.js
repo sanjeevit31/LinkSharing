@@ -13,4 +13,9 @@ function showTime(){
     document.getElementById('time_').innerHTML=''+time1
     }
 
+function showStates(){
+
+    document.getElementById("state").style.visibility="visible";
+}
+
 

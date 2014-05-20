@@ -1,5 +1,5 @@
 
-<%@ page import="linksharing.Topic" %>
+<%@ page import="com.linksharing.Topic" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -23,29 +23,67 @@
 			</g:if>
 			<ol class="property-list topic">
 			
-				<g:if test="${topicInstance?.title}">
-				<li class="fieldcontain">
-					<span id="title-label" class="property-label"><g:message code="topic.title.label" default="Title" /></span>
-					
-						<span class="property-value" aria-labelledby="title-label"><g:fieldValue bean="${topicInstance}" field="title"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${topicInstance?.age}">
-				<li class="fieldcontain">
-					<span id="age-label" class="property-label"><g:message code="topic.age.label" default="Age" /></span>
-					
-						<span class="property-value" aria-labelledby="age-label"><g:fieldValue bean="${topicInstance}" field="age"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${topicInstance?.name}">
 				<li class="fieldcontain">
 					<span id="name-label" class="property-label"><g:message code="topic.name.label" default="Name" /></span>
 					
 						<span class="property-value" aria-labelledby="name-label"><g:fieldValue bean="${topicInstance}" field="name"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${topicInstance?.summery}">
+				<li class="fieldcontain">
+					<span id="summery-label" class="property-label"><g:message code="topic.summery.label" default="Summery" /></span>
+					
+						<span class="property-value" aria-labelledby="summery-label"><g:fieldValue bean="${topicInstance}" field="summery"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${topicInstance?.dateCreated}">
+				<li class="fieldcontain">
+					<span id="dateCreated-label" class="property-label"><g:message code="topic.dateCreated.label" default="Date Created" /></span>
+					
+						<span class="property-value" aria-labelledby="dateCreated-label"><g:formatDate date="${topicInstance?.dateCreated}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${topicInstance?.lastUpdated}">
+				<li class="fieldcontain">
+					<span id="lastUpdated-label" class="property-label"><g:message code="topic.lastUpdated.label" default="Last Updated" /></span>
+					
+						<span class="property-value" aria-labelledby="lastUpdated-label"><g:formatDate date="${topicInstance?.lastUpdated}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${topicInstance?.newUsers}">
+				<li class="fieldcontain">
+					<span id="newUsers-label" class="property-label"><g:message code="topic.newUsers.label" default="New Users" /></span>
+					
+						<span class="property-value" aria-labelledby="newUsers-label"><g:link controller="newUser" action="show" id="${topicInstance?.newUsers?.id}">${topicInstance?.newUsers?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${topicInstance?.subscribers}">
+				<li class="fieldcontain">
+					<span id="subscribers-label" class="property-label"><g:message code="topic.subscribers.label" default="Subscribers" /></span>
+					
+						<g:each in="${topicInstance.subscribers}" var="s">
+						<span class="property-value" aria-labelledby="subscribers-label"><g:link controller="subscribed" action="show" id="${s.id}">${s?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${topicInstance?.visibility}">
+				<li class="fieldcontain">
+					<span id="visibility-label" class="property-label"><g:message code="topic.visibility.label" default="Visibility" /></span>
+					
+						<span class="property-value" aria-labelledby="visibility-label"><g:fieldValue bean="${topicInstance}" field="visibility"/></span>
 					
 				</li>
 				</g:if>

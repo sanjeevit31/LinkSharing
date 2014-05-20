@@ -30,10 +30,31 @@
       <primary-key name="PRIMARY" columns="id"/>
       <exported-key name="FK2A7A111D572A8C06" table="author_book" schema="" catalog="LinkSharing" columns="book_id"/>
     </table>
+    <table name="country" schema="" catalog="LinkSharing" type="TABLE">
+      <column name="id" sqlType="BIGINT" length="19" precision="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="version" sqlType="BIGINT" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="country_code" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="country_name" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK68AC491FD7C97A1" table="state" schema="" catalog="LinkSharing" columns="country_id"/>
+    </table>
     <table name="demo" schema="" catalog="LinkSharing" type="TABLE">
       <column name="id" sqlType="BIGINT" length="19" precision="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
       <column name="version" sqlType="BIGINT" length="19" precision="0" nullable="false" jdbcType="-5"/>
       <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="new_user" schema="" catalog="LinkSharing" type="TABLE">
+      <column name="id" sqlType="BIGINT" length="19" precision="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="version" sqlType="BIGINT" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="country" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="emailid" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="fname" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="gender" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="lname" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="mob" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="emailid" unique="true" columns="emailid"/>
     </table>
     <table name="person" schema="" catalog="LinkSharing" type="TABLE">
       <column name="id" sqlType="BIGINT" length="19" precision="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
@@ -48,6 +69,15 @@
       <column name="version" sqlType="BIGINT" length="19" precision="0" nullable="false" jdbcType="-5"/>
       <column name="name" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="state" schema="" catalog="LinkSharing" type="TABLE">
+      <column name="id" sqlType="BIGINT" length="19" precision="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="version" sqlType="BIGINT" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="country_id" sqlType="BIGINT" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="state_code" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="state_name" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK68AC491FD7C97A1" columns="country_id" ref-table="country" ref-schema="" ref-catalog="LinkSharing" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
     </table>
     <table name="test" schema="" catalog="LinkSharing" type="TABLE">
       <column name="idtest" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
