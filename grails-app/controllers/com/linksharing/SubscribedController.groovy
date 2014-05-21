@@ -7,6 +7,7 @@ import grails.transaction.Transactional
 
 @Transactional(readOnly = true)
 class SubscribedController {
+    SubscribedImp subscribedImp
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
@@ -31,11 +32,23 @@ class SubscribedController {
         }
 
         if (subscribedInstance.hasErrors()) {
-            respond subscribedInstance.errors, view:'create'
+            respond subscribedInstance.errors, view:'create',[status: CREATED]
             return
         }
 
-        subscribedInstance.save flush:true
+       boolean flag=subscribedImp.subscriptionuniquness(subscribedInstance);
+        println flag
+        if(flag){
+
+             redirect(controller:'subscribed',action: 'create',params: [errMsg: "You Can't Subscribe a Topic Again"])
+            //render(view:'/subscribed/create')
+           // respond subscribedInstance.errors, view:'create'
+            return
+
+        }
+                else
+            subscribedInstance.save flush:true
+
 
         request.withFormat {
             form multipartForm {

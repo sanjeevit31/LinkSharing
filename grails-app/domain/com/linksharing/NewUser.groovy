@@ -19,5 +19,10 @@ class NewUser {
         country nullable: false
         gender nullable: false
 
-}
+    }
+    @Override
+    public String toString(){
+        return emailid
+    }
+    static hasMany = [subscribed:Subscribed,resource:Resource]
 }

@@ -4,7 +4,7 @@
 
 <div class="fieldcontain ${hasErrors(bean: newUserInstance, field: 'fname', 'error')} required">
 	<label for="fname">
-		<g:message code="newUser.fname.label" default="Fname" />
+		<g:message code="newUser.fname.label" default="First Name" />
 		<span class="required-indicator">*</span>
 	</label>
 	<g:textField name="fname" required="" value="${newUserInstance?.fname}"/>
@@ -13,7 +13,7 @@
 
 <div class="fieldcontain ${hasErrors(bean: newUserInstance, field: 'lname', 'error')} required">
 	<label for="lname">
-		<g:message code="newUser.lname.label" default="Lname" />
+		<g:message code="newUser.lname.label" default="Last Name" />
 		<span class="required-indicator">*</span>
 	</label>
 	<g:textField name="lname" required="" value="${newUserInstance?.lname}"/>
@@ -22,7 +22,7 @@
 
 <div class="fieldcontain ${hasErrors(bean: newUserInstance, field: 'emailid', 'error')} required">
 	<label for="emailid">
-		<g:message code="newUser.emailid.label" default="Emailid" />
+		<g:message code="newUser.emailid.label" default="Email Id" />
 		<span class="required-indicator">*</span>
 	</label>
 	<g:field type="email" name="emailid" required="" value="${newUserInstance?.emailid}"/>
@@ -34,25 +34,26 @@
 		<g:message code="newUser.password.label" default="Password" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="password" required="" value="${newUserInstance?.password}"/>
+	%{--<g:textField name="password" required="" value="${newUserInstance?.password}"/>--}%
+    <g:passwordField name="password" required=""/>
+
+</div>
+<div class="fieldcontain ${hasErrors(bean: newUserInstance, field: 'confirmpassword', 'error')} required">
+    <label for="confirmpassword">
+        <g:message code="newUser.confirmpassword.label" default="Confirm Password" />
+        <span class="required-indicator">*</span>
+    </label>
+    %{--<g:textField name="password" required="" value="${newUserInstance?.password}"/>--}%
+    <g:passwordField name="confirmpassword" required=""/>
 
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: newUserInstance, field: 'mob', 'error')} required">
 	<label for="mob">
-		<g:message code="newUser.mob.label" default="Mob" />
+		<g:message code="newUser.mob.label" default="Mobile No." />
 		<span class="required-indicator">*</span>
 	</label>
 	<g:textField name="mob" required="" value="${newUserInstance?.mob}"/>
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: newUserInstance, field: 'country', 'error')} required">
-	<label for="country">
-		<g:message code="newUser.country.label" default="Country" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="country" required="" value="${newUserInstance?.country}"/>
 
 </div>
 
@@ -61,7 +62,17 @@
 		<g:message code="newUser.gender.label" default="Gender" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="gender" required="" value="${newUserInstance?.gender}"/>
+	%{--<g:textField name="gender" required="" value="${newUserInstance?.gender}"/>--}%
+       <g:select name="gender" from="${['male','female']}" noSelection="${[0:'~~~~Select  Gender~~~~']}"/>
+
+</div>
+<div class="fieldcontain ${hasErrors(bean: newUserInstance, field: 'country', 'error')} required">
+    <label for="country">
+        <g:message code="newUser.country.label" default="Country" />
+        <span class="required-indicator">*</span>
+    </label>
+    <g:countrySelect name="country" required="" noSelection="${[0:'~~~~~~~~~~~~Select Country~~~~~~~~~~~~']}"/>
+    %{--<g:textField name="country" required="" value="${newUserInstance?.country}"/>--}%
 
 </div>
 

@@ -15,6 +15,7 @@
     #footer {background-color:#e0e0ff;text-align: center;}
 
     </style>
+    <g:javascript library="jquery"></g:javascript>
     <g:layoutHead/>
 </head>
 

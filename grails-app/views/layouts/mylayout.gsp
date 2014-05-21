@@ -10,7 +10,7 @@
 <head>
     <title><<g:layoutTitle>hello/title>
     <g:layoutHead/>%{--//import common css file and js file--}%
-    <g:javascript></g:javascript>
+    <g:javascript library="jquery"></g:javascript>
 </head>
 
 <body>

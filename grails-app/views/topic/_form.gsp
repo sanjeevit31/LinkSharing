@@ -52,7 +52,8 @@
 		<g:message code="topic.visibility.label" default="Visibility" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="visibility" required="" value="${topicInstance?.visibility}"/>
+	%{--<g:textField name="visibility" required="" value="${topicInstance?.visibility}"/>--}%
+    <g:select name="visibility" from="${['public','private']}" required="" />
 
 </div>
 

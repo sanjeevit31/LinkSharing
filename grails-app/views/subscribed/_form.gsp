@@ -1,7 +1,10 @@
 <%@ page import="com.linksharing.Subscribed" %>
 
 
+   <center><p style="color: red"> ${params.'errMsg'}</p></center>
 
+<%println request.getAttribute('errMsg')
+    %>
 <div class="fieldcontain ${hasErrors(bean: subscribedInstance, field: 'interestLevel', 'error')} ">
 	<label for="interestLevel">
 		<g:message code="subscribed.interestLevel.label" default="Interest Level" />

@@ -7,6 +7,7 @@ import grails.transaction.Transactional
 
 @Transactional(readOnly = true)
 class NewUserController {
+    NewUserImplService newUserImplService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
@@ -21,6 +22,7 @@ class NewUserController {
     }
 
     def create() {
+        Map map=
         respond new NewUser(params)
     }
 
@@ -109,6 +111,7 @@ class NewUserController {
     def userCreatedMsg(){
 
     }
+
     def validateUser(){
         String name= params['name']
         String pass=params['password']
@@ -118,7 +121,11 @@ class NewUserController {
         NewUser newUser= NewUser.findByEmailidAndPassword(name,pass)
         if(newUser != null){
             session.setAttribute('userid',newUser.id)
-            render 'Welcome '+newUser.fname+' '+newUser.lname
+            session.setAttribute('user',newUser)
+            //render 'Welcome '+newUser.fname+' '+newUser.lname
+           // redirect(view: '/newUser/dashBord',model: [msg:' You are SuccessFully logined'])
+            redirect(controller: 'newUser' ,action:'dashBord',params: [msg:'You are SuccessFully logined\''] )
+            dashBord()
         }
 
         else{
@@ -131,6 +138,25 @@ class NewUserController {
             render(view: '/newUser/login',model: [errorMessage:' invalid username or password'])
 
         }
+    }
+    def demojquery(){
+
+    }
+
+
+    def logout(){
+        session.removeAttribute('userid')
+        session.removeAttribute('user')
+        session.invalidate()
+
+        render(view: '/newUser/login',model: [errorMessage:' You are SuccessFully LogOut..',user:[session.getAttribute('user').n]])
+    }
+
+    def dashBord(){
+        NewUser  newUser=( NewUser)session.getAttribute('user')
+
+        Map map=newUserImplService.dashBord(newUser)
+        params['map']=map
     }
 
 }

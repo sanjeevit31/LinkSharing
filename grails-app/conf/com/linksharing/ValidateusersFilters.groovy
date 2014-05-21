@@ -10,7 +10,7 @@ class ValidateusersFilters {
                         println params
                         if(id==null ){
 
-                        redirect([controller:"newUser",action:"login" ])
+                       // redirect([controller:"newUser",action:"login" ])
 
                          }
             }
