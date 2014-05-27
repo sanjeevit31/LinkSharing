@@ -7,16 +7,37 @@ import grails.transaction.Transactional
 
 @Transactional(readOnly = true)
 class TopicController {
+    TopicService topicService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
+
         params.max = Math.min(max ?: 10, 100)
-        respond Topic.list(params), model:[topicInstanceCount: Topic.count()]
+
+        println params
+       //List topic=Topic.list(params)
+       List topic=Topic.findAllByVisibilityOrNewUsers('public',session.getAttribute('user'),params)
+       // Topic.findAllWhere([id: session.getAttribute('user').id])
+       // println 'topic'+topic
+
+       // int size=topic.size();
+        //int size1=Topic.count()
+        //println topic+':'+size+':'+size1
+        //respond topic,model:[topicInstanceCount:size,topicList:topic]
+       respond topic, model:[topicInstanceCount: Topic.count(),topic:topic]
+       // render(view: 'index', model:[topic:topic,topicInstanceCount:topic.size()] )
     }
 
     def show(Topic topicInstance) {
-        respond topicInstance
+       Map map=topicService.show(topicInstance,session.getAttribute('userid'))
+        String buttonVisibility='buttons'
+        boolean flag= session.getAttribute('user').id==topicInstance.newUsers.id
+        if(!flag){
+            buttonVisibility='buttonsHide'
+        }
+
+        respond topicInstance,model: map//[TopicDeleteEditFlag:buttonVisibility,flag:flag]
     }
 
     def create() {

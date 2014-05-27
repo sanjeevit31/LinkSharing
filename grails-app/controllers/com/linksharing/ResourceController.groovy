@@ -1,13 +1,13 @@
 package com.linksharing
 
-
+import org.springframework.web.multipart.commons.CommonsMultipartFile
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
 @Transactional(readOnly = true)
 class ResourceController {
-
+    ResourceImplService resourceImplService;
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
@@ -20,11 +20,37 @@ class ResourceController {
     }
 
     def create() {
+        Map map=[:]
+                                    println 'from create of resource controller'+params
+        params.userid=session.userid
+                                     println 'from create of resource controller'+params
+//        if(resourceServiceImpl1!=null){
+//        map=resourceServiceImpl.getUserAndTopic(params)
+//                                      println 'from create of resource controller map'+map
+//        }
+//       String topicName= Topic.findById(params.topicid).name
+//        println 'topic name'+topicName
+//        params.topicName=topicName
+//        println params
         respond new Resource(params)
     }
 
     @Transactional
     def save(Resource resourceInstance) {
+        println 'from save'+params
+        String type=params.type
+
+        if(type!=null && !type.equals(''))
+        {
+            if(type.equals('Document')){
+                resourceImplService.upload(servletContext,request,type,params)
+
+                resourceInstance.properties=params;
+
+            }
+
+        }
+
         if (resourceInstance == null) {
             notFound()
             return
@@ -35,7 +61,11 @@ class ResourceController {
             return
         }
 
+        //sanjeev
+
+
         resourceInstance.save flush:true
+        resourceImplService.readWriteEntryForResource(resourceInstance)
 
         request.withFormat {
             form multipartForm {
@@ -100,5 +130,11 @@ class ResourceController {
             }
             '*'{ render status: NOT_FOUND }
         }
+    }
+
+    def topicsResource(){
+        //render params.topicid
+       resourceImplService.resourceList(params)
+
     }
 }

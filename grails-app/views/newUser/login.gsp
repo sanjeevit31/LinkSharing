@@ -13,25 +13,24 @@
     <title>Login</title>
 
     <link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css">
-    <link rel="stylesheet" href="${resource(dir: 'css' ,file: 'formlogin.css')}">
-    <g:javascript library="jquery" plugin="jquery"/>
-    <g:javascript>
-        $(document).ready(function(){
-            $("p").click(function(){
-                $(this).hide();
-            });
-        });
-        </g:javascript>
+    <link rel="stylesheet" href="${resource(dir: 'css' ,file: 'formlogin.css')}" type="text/css">
+
+
+
 </head>
 
 <body >
-
+<p>If you click on me, I will disappear.</p>
+<p>Click me away!</p>
+<p>Click me too!</p>
 
 <div id="formdiv">
     </br>
 <center>WELCOME  TO  LINK  SHARING
    <g:form controller="newUser" action="validateUser" method="POST"  name="loginform">
        </br></br>
+
+
          <p style="color: red">${errorMessage} </p>
 
 
@@ -43,12 +42,12 @@
        or</br>
    </g:form>
     <g:link name="registration"  action="create" controller="newUser">
-   <input type="button" class="button_" value="Create New User" name="registration" formaction="dghfvhdj"/>
+   <input type="button" class="button_" value="Create New User" name="registration"/>
     </g:link>
 
    %{-- <g:actionSubmit value="Create New User" class="button_" action="${g.link(controller: 'users',action: 'registration')}"></g:actionSubmit>--}%
 </center>
 </div>
-<p>hello</p>
+
 </body>
 </html>

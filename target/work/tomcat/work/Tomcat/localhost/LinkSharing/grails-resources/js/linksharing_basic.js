@@ -17,5 +17,22 @@ function showStates(){
 
     document.getElementById("state").style.visibility="visible";
 }
+function resourceType(){
+    var type=document.getElementById('type').value
+   if(type=='Link')
+    {
+        document.getElementById('resourceTypeLabel').innerHTML='URL'
+       document.getElementById('resourceType').innerHTML='<input type="url" value="" id="url_path" name="url_path"/>'
+    }
+    else {
+       document.getElementById('resourceTypeLabel').innerHTML='File'
+        document.getElementById('resourceType').innerHTML='<input type="file"  required="" id="url_path" name="url_path"/>'
+    }
+
+}
+
+
+
+
 
 

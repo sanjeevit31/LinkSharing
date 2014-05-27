@@ -16,6 +16,9 @@
 </head>
 
 <body>
-${params['map']['name']}
+${session.msg}
+<%
+    session.removeAttribute('msg')%>
+
 </body>
 </html>

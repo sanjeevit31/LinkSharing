@@ -12,8 +12,12 @@ class SubscribedController {
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
+        println 'from index subscribed'
         params.max = Math.min(max ?: 10, 100)
-        respond Subscribed.list(params), model:[subscribedInstanceCount: Subscribed.count()]
+        List subscribed=Subscribed.findAllByNewUsers(session.getAttribute('user'),params)
+        respond subscribed,model: [subscribedInstanceCount:subscribed.size()]
+       // respond topic, model:[topicInstanceCount: Topic.count(),topic:topic]
+        //respond Subscribed.list(params), model:[subscribedInstanceCount: Subscribed.count()]
     }
 
     def show(Subscribed subscribedInstance) {
@@ -26,6 +30,7 @@ class SubscribedController {
 
     @Transactional
     def save(Subscribed subscribedInstance) {
+        println 'from top of Subscribed save'
         if (subscribedInstance == null) {
             notFound()
             return
@@ -40,7 +45,7 @@ class SubscribedController {
         println flag
         if(flag){
 
-             redirect(controller:'subscribed',action: 'create',params: [errMsg: "You Can't Subscribe a Topic Again"])
+             redirect(controller:'subscribed',action: 'create',params: [errMsg: "You Can't Subscribe a Topic Again",topicid:subscribedInstance.topic.id])
             //render(view:'/subscribed/create')
            // respond subscribedInstance.errors, view:'create'
             return

@@ -23,7 +23,9 @@ class NewUserImplService {
      Map map=[:]
      if(newUser!=null){
          map['name']= newUser.fname+' '+newUser.lname
+         map['sex']='male'
      }
+
      return map
 
 

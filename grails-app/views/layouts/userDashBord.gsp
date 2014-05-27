@@ -10,11 +10,12 @@
 <head>
 
     <g:javascript src="linksharing_basic.js"></g:javascript>
+
     <title>Link Sharing
         <g:layoutTitle default="Grails"/>
     </title>
 
-    <g:javascript library="jquery"></g:javascript>
+
     <link rel="stylesheet" href="${resource(dir: 'css', file: 'minu.css')}" type="text/css">
     <g:layoutHead/>
 </head>
@@ -32,7 +33,7 @@
     <div id="minu">
         <b>
          <g:link controller="newUser" action="dashBord">
-            Welcome: %{--${params['map']['name']}--}%
+            Welcome: ${session.name}%{--${params['map']['name']}--}%
          </g:link>
 
         </b>|
@@ -46,6 +47,9 @@
         <g:link controller="newUser" action="logout">
             <b>Logout</b>
         </g:link>
+       <%
+
+           %>
     </div>
 
 <g:layoutBody/>

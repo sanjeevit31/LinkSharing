@@ -179,7 +179,7 @@ th.desc a {
     background: #f7f7f7;
 }
 .even {
-    background: #fff;
+    background: #e1fdff;
 }
 
 /* LIST */
@@ -246,6 +246,7 @@ th.desc a {
     margin-top: 5px;
     overflow: hidden;
     padding: 0;
+   /* visibility: hidden;*/
 }
 
 .buttons input {

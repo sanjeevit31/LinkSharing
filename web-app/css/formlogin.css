@@ -5,7 +5,7 @@ input{
 #formdiv{
     height: 400px;
     width: 230px;
-   // border: groove thin #ea1910;
+   border: groove thin #ea1910;
     border: solid;
     margin-left: 100px;
     margin-top: 10px;

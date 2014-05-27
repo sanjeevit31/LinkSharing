@@ -8,9 +8,10 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
+    <g:javascript  plugin="jquery" library="jquery"/>
     <title><<g:layoutTitle>hello/title>
     <g:layoutHead/>%{--//import common css file and js file--}%
-    <g:javascript library="jquery"></g:javascript>
+
 </head>
 
 <body>

@@ -5,9 +5,9 @@
       <configuration>
         <webroots>
           <root url="file://$MODULE_DIR$/target/work/plugins/resources-1.2.7/web-app" relative="/" />
+          <root url="file://$MODULE_DIR$/target/work/plugins/jquery-validation-1.9/web-app" relative="/" />
           <root url="file://$MODULE_DIR$/target/work/plugins/database-migration-1.4.0/grails-app/views" relative="/" />
           <root url="file://$MODULE_DIR$/target/work/plugins/jquery-1.11.0.2/web-app" relative="/" />
-          <root url="file://$MODULE_DIR$/target/work/plugins/jquery-validation-1.9/web-app" relative="/" />
         </webroots>
         <sourceRoots />
       </configuration>

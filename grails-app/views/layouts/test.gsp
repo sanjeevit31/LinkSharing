@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
+
     <title>Hello
         <g:layoutTitle default="Grails"/></title>
     <style>
@@ -15,7 +16,7 @@
     #footer {background-color:#e0e0ff;text-align: center;}
 
     </style>
-    <g:javascript library="jquery"></g:javascript>
+
     <g:layoutHead/>
 </head>
 

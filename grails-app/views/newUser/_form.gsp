@@ -38,13 +38,13 @@
     <g:passwordField name="password" required=""/>
 
 </div>
-<div class="fieldcontain ${hasErrors(bean: newUserInstance, field: 'confirmpassword', 'error')} required">
-    <label for="confirmpassword">
-        <g:message code="newUser.confirmpassword.label" default="Confirm Password" />
+<div class="fieldcontain ${hasErrors(bean: newUserInstance, field: 'confirmPassword', 'error')} required">
+    <label for="confirmPassword">
+        <g:message code="newUser.confirmPassword.label" default="Confirm Password" />
         <span class="required-indicator">*</span>
     </label>
     %{--<g:textField name="password" required="" value="${newUserInstance?.password}"/>--}%
-    <g:passwordField name="confirmpassword" required=""/>
+    <g:passwordField name="confirmPassword" required=""/>
 
 </div>
 

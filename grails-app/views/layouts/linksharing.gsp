@@ -17,7 +17,10 @@
     #footer {background-color:#e0e0ff;text-align: center;}
 
     </style>
-    <g:javascript library="jquery"></g:javascript>
+    %{--<g:javascript library="jquery"></g:javascript>--}%
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css">
+    <link rel="stylesheet" href="${resource(dir: 'css' ,file: 'formlogin.css')}">
     <g:layoutHead/>
 </head>
 

@@ -2,9 +2,10 @@ package com.linksharing
 
 class Resource {
 
+
+    String heading
     String type//link or document
-    String name
-    String url
+    String url_path
 
 
     static constraints = {

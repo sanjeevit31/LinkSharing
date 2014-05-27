@@ -28,10 +28,13 @@
 			<g:form url="[resource:subscribedInstance, action:'save']" >
 				<fieldset class="form">
 					<g:render template="form"/>
-				</fieldset>
-				<fieldset class="buttons">
-					<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
-				</fieldset>
+                    ${params.topicid=topicid}
+
+				%{--</fieldset>--}%
+				%{--<fieldset class="buttons">--}%
+					%{--<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Submit')}" />--}%
+                    <center><g:submitButton name="create" class="save" value='Subscribe' /></center>
+                </fieldset>
 			</g:form>
 		</div>
 	</body>

@@ -3,14 +3,14 @@ package com.linksharing
 class ValidateusersFilters {
 
     def filters = {
-        all(controller:'newUser',action:'create|login|save|userCreatedMsg', invert:true) {
+        all(controller:'newUser',action:'create|login|save|userCreatedMsg|validateUser', invert:true) {
             before = {
                          def id=session.getAttribute('userid')
 
-                        println params
+                        println 'from filter'+params
                         if(id==null ){
 
-                       // redirect([controller:"newUser",action:"login" ])
+                        redirect([controller:"newUser",action:"login" ])
 
                          }
             }

@@ -4,7 +4,7 @@
 
 <div class="fieldcontain ${hasErrors(bean: topicInstance, field: 'name', 'error')} required">
 	<label for="name">
-		<g:message code="topic.name.label" default="Name" />
+		<g:message code="topic.name.label" default="Topic Name" />
 		<span class="required-indicator">*</span>
 	</label>
 	<g:textField name="name" required="" value="${topicInstance?.name}"/>
@@ -20,16 +20,16 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: topicInstance, field: 'newUsers', 'error')} required">
+%{--<div class="fieldcontain ${hasErrors(bean: topicInstance, field: 'newUsers', 'error')} required">
 	<label for="newUsers">
 		<g:message code="topic.newUsers.label" default="New Users" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="newUsers" name="newUsers.id" from="${com.linksharing.NewUser.list()}" optionKey="id" required="" value="${topicInstance?.newUsers?.id}" class="many-to-one"/>
-
+	<g:select id="newUsers" name="newUsers.id" from="${com.linksharing.NewUser.list()}" optionKey="id" required="" value="${topicInstance?.newUsers?.id}" class="many-to-one"/>--}%
+<g:hiddenField name="newUsers.id" id="newUsers" optionKey="id" class="many-to-one" value="${session.user.id}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: topicInstance, field: 'subscribers', 'error')} ">
+%{--<div class="fieldcontain ${hasErrors(bean: topicInstance, field: 'subscribers', 'error')} ">
 	<label for="subscribers">
 		<g:message code="topic.subscribers.label" default="Subscribers" />
 		
@@ -45,7 +45,7 @@
 </ul>
 
 
-</div>
+</div>--}%
 
 <div class="fieldcontain ${hasErrors(bean: topicInstance, field: 'visibility', 'error')} required">
 	<label for="visibility">

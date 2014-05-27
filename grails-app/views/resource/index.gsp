@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="layout" content="main">
+		%{--<meta name="layout" content="main">--}%
 		<g:set var="entityName" value="${message(code: 'resource.label', default: 'Resource')}" />
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
@@ -24,7 +24,7 @@
 			<thead>
 					<tr>
 					
-						<g:sortableColumn property="name" title="${message(code: 'resource.name.label', default: 'Name')}" />
+						<g:sortableColumn property="heading" title="${message(code: 'resource.heading.label', default: 'Heading')}" />
 					
 						<th><g:message code="resource.new.label" default="New" /></th>
 					
@@ -32,15 +32,15 @@
 					
 						<g:sortableColumn property="type" title="${message(code: 'resource.type.label', default: 'Type')}" />
 					
-						<g:sortableColumn property="url" title="${message(code: 'resource.url.label', default: 'Url')}" />
+						<g:sortableColumn property="url_path" title="${message(code: 'resource.url_path.label', default: 'Urlpath')}" />
 					
 					</tr>
 				</thead>
-				<tbody>
+				<tbody class="odd">
 				<g:each in="${resourceInstanceList}" status="i" var="resourceInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${resourceInstance.id}">${fieldValue(bean: resourceInstance, field: "name")}</g:link></td>
+						<td><g:link action="show" id="${resourceInstance.id}">${fieldValue(bean: resourceInstance, field: "heading")}</g:link></td>
 					
 						<td>${fieldValue(bean: resourceInstance, field: "new")}</td>
 					
@@ -48,7 +48,7 @@
 					
 						<td>${fieldValue(bean: resourceInstance, field: "type")}</td>
 					
-						<td>${fieldValue(bean: resourceInstance, field: "url")}</td>
+						<td>${fieldValue(bean: resourceInstance, field: "url_path")}</td>
 					
 					</tr>
 				</g:each>

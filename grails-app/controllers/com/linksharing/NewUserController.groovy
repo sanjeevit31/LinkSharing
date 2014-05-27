@@ -22,12 +22,13 @@ class NewUserController {
     }
 
     def create() {
-        Map map=
+       println 'from create of newUser'
         respond new NewUser(params)
     }
 
     @Transactional
     def save(NewUser newUserInstance) {
+        println params
         if (newUserInstance == null) {
             notFound()
             return
@@ -113,19 +114,33 @@ class NewUserController {
     }
 
     def validateUser(){
+        println 'from validate'
         String name= params['name']
         String pass=params['password']
         String keepMeLogin=params['keepMeLogin']
-       // String errorMessage=""
+
 
         NewUser newUser= NewUser.findByEmailidAndPassword(name,pass)
+        println 'new User'+newUser
         if(newUser != null){
             session.setAttribute('userid',newUser.id)
             session.setAttribute('user',newUser)
-            //render 'Welcome '+newUser.fname+' '+newUser.lname
+            session.setAttribute('name',newUser.fname+' '+newUser.lname)
+            session.setAttribute('msg','You are SuccessFully logined.......')
+            Map map=newUserImplService.dashBord(newUser)
+            println 'before render'
+            render(view: 'dashBord',model: [msg:'You are SuccessFully logined.......',map:map])
+
+          /*  //render 'Welcome '+newUser.fname+' '+newUser.lname
            // redirect(view: '/newUser/dashBord',model: [msg:' You are SuccessFully logined'])
-            redirect(controller: 'newUser' ,action:'dashBord',params: [msg:'You are SuccessFully logined\''] )
-            dashBord()
+            //params.user=newUser
+            Map map=newUserImplService.dashBord(newUser)
+            println map
+
+           redirect(controller: 'newUser' ,action:'dashBord',mode )
+          //  params: [msg:'You are SuccessFully logined']
+           // dashBord()
+            render(view:[controller: 'newUser',action: 'dashBord'],model: [msg:' You are SuccessFully logined',map:map])*/
         }
 
         else{
@@ -135,7 +150,7 @@ class NewUserController {
             session.invalidate()
             println 'validateUser else'
 
-            render(view: '/newUser/login',model: [errorMessage:' invalid username or password'])
+            render (view: 'login',model:[errorMessage:' invalid username or password'])
 
         }
     }
@@ -149,14 +164,13 @@ class NewUserController {
         session.removeAttribute('user')
         session.invalidate()
 
-        render(view: '/newUser/login',model: [errorMessage:' You are SuccessFully LogOut..',user:[session.getAttribute('user').n]])
+        render(view: '/newUser/login',model: [errorMessage:' You are SuccessFully LogOut..'])
     }
 
-    def dashBord(){
-        NewUser  newUser=( NewUser)session.getAttribute('user')
+    def dashBord(NewUser newUser){
 
         Map map=newUserImplService.dashBord(newUser)
-        params['map']=map
+        render(view: 'dashBord',model: [msg:'You are SuccessFully logined.......',map:map])
     }
 
 }

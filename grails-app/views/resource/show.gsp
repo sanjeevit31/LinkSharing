@@ -23,11 +23,11 @@
 			</g:if>
 			<ol class="property-list resource">
 			
-				<g:if test="${resourceInstance?.name}">
+				<g:if test="${resourceInstance?.heading}">
 				<li class="fieldcontain">
-					<span id="name-label" class="property-label"><g:message code="resource.name.label" default="Name" /></span>
+					<span id="heading-label" class="property-label"><g:message code="resource.heading.label" default="Heading" /></span>
 					
-						<span class="property-value" aria-labelledby="name-label"><g:fieldValue bean="${resourceInstance}" field="name"/></span>
+						<span class="property-value" aria-labelledby="heading-label"><g:fieldValue bean="${resourceInstance}" field="heading"/></span>
 					
 				</li>
 				</g:if>
@@ -59,11 +59,11 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${resourceInstance?.url}">
+				<g:if test="${resourceInstance?.url_path}">
 				<li class="fieldcontain">
-					<span id="url-label" class="property-label"><g:message code="resource.url.label" default="Url" /></span>
+					<span id="url_path-label" class="property-label"><g:message code="resource.url_path.label" default="Urlpath" /></span>
 					
-						<span class="property-value" aria-labelledby="url-label"><g:fieldValue bean="${resourceInstance}" field="url"/></span>
+						<span class="property-value" aria-labelledby="url_path-label"><g:fieldValue bean="${resourceInstance}" field="url_path"/></span>
 					
 				</li>
 				</g:if>

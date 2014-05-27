@@ -47,5 +47,12 @@ class HelloController {
     def test1(){
 
     }
+    def ajaxDemo(){
+
+    }
+   def ajaxRandom1(){
+render 'hello it sanjeev from ajaxRandom1 action of  HelloController'
+    }
+
 
 }

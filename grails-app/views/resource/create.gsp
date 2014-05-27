@@ -4,6 +4,7 @@
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'resource.label', default: 'Resource')}" />
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
+        <g:javascript src="linksharing_basic.js"></g:javascript>
 	</head>
 	<body>
 		<a href="#create-resource" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
@@ -25,7 +26,7 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:form url="[resource:resourceInstance, action:'save']" >
+			<g:form url="[resource:resourceInstance, action:'save']" enctype="multipart/form-data">
 				<fieldset class="form">
 					<g:render template="form"/>
 				</fieldset>

@@ -222,6 +222,9 @@ fieldset,
 .fieldcontain {
 	margin-top: 1em;
 }
+.fieldcontainHide{
+    visibility: hidden;
+}
 
 .fieldcontain label,
 .fieldcontain .property-label {
@@ -468,11 +471,11 @@ th.desc a {
 }
 
 .odd {
-	background: #f7f7f7;
+	background: #E7E7E7;
 }
 
 .even {
-	background: #ffffff;
+	background: #FFFFFF;
 }
 
 th:hover, tr:hover {
@@ -530,6 +533,18 @@ th:hover, tr:hover {
 	        box-shadow: 0 0 3px 1px #aaaaaa;
 	margin: 0.1em 0 0 0;
 	border: none;
+
+}
+.buttonsHide {
+    background-color: #efefef;
+    overflow: hidden;
+    padding: 0.3em;
+    -moz-box-shadow: 0 0 3px 1px #aaaaaa;
+    -webkit-box-shadow: 0 0 3px 1px #aaaaaa;
+    box-shadow: 0 0 3px 1px #aaaaaa;
+    margin: 0.1em 0 0 0;
+    border: none;
+    visibility: hidden;
 }
 
 .buttons input,

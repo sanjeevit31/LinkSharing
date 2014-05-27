@@ -94,7 +94,7 @@
 					
 				</li>
 				</g:if>
-			
+
 			</ol>
 			<g:form url="[resource:newUserInstance, action:'delete']" method="DELETE">
 				<fieldset class="buttons">
