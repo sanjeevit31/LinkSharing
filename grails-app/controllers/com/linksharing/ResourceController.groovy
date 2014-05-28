@@ -4,8 +4,8 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
-
-@Transactional(readOnly = true)
+//
+//@Transactional(readOnly = true)
 class ResourceController {
     ResourceImplService resourceImplService;
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
@@ -65,7 +65,7 @@ class ResourceController {
 
 
         resourceInstance.save flush:true
-        resourceImplService.readWriteEntryForResource(resourceInstance)
+      //  resourceImplService.readWriteEntryForResource(resourceInstance)
 
         request.withFormat {
             form multipartForm {
@@ -134,7 +134,14 @@ class ResourceController {
 
     def topicsResource(){
         //render params.topicid
-       resourceImplService.resourceList(params)
+       resourceImplService.resourceList(params,session.user)
+
+    }
+    def hi(){
+        println 'hi............................'
+        println params
+        resourceImplService.readWriteEntryForResource(params)
+        render ''
 
     }
 }

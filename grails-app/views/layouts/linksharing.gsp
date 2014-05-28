@@ -17,11 +17,13 @@
     #footer {background-color:#e0e0ff;text-align: center;}
 
     </style>
-    %{--<g:javascript library="jquery"></g:javascript>--}%
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <g:javascript library="jquery"></g:javascript>
+
+    %{--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>--}%
     <link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css">
     <link rel="stylesheet" href="${resource(dir: 'css' ,file: 'formlogin.css')}">
     <g:layoutHead/>
+    <r:layoutResources/>
 </head>
 
 <body onload="dateTime_()">
@@ -33,11 +35,11 @@
     </br></br>
     <span id="time_"></span>
 </div>
+<r:layoutResources />
 
 <g:layoutBody/>
 
 <div class="footer" role="contentinfo"></div>
 <div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
-<r:layoutResources />
 </body>
 </html>

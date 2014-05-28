@@ -31,10 +31,13 @@
     </thead>
     <tbody >
     <g:each in="${params.resourceList}" status="i" var="resourceInstance">
-        <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+        <tr class="${(i % 2) == 0 ? 'even' : 'odd'}" id="${i}">
 
             <td>${resourceInstance.heading}</td>
-            <td style="font-size: 10px">new</td>
+            <td style="font-size: 10px" id="status">
+               <span id="new${i}">${params.read.get(i)?'':'new'}</span>
+                <g:hiddenField name="resourceId" id="resourceId${i}" value="${resourceInstance.id}"/>
+                </td>
             <td>${resourceInstance.new}</td>
 
 
@@ -54,5 +57,24 @@
     </g:each>
     </tbody>
 </table>
+
+<script>
+$(document).ready(function(){
+    $('tr').click(function(){
+
+       var trId=$(this).attr("id");
+        var tdId="resourceId"+trId;
+        var newId='new'+trId;
+       $('#'+newId).hide()
+//        alert(".."+tdId)
+        var resourceId=($("#"+tdId).val())
+
+
+        jQuery.ajax({type:'POST',data:{'resourceId':resourceId}, url:'/LinkSharing/resource/hi?user=${session.user}',
+            success:function(data,textStatus){/*alert('hello'+data)*/},
+            error:function(XMLHttpRequest,textStatus,errorThrown){}});return false;
+    })
+})
+</script>
 </body>
 </html>

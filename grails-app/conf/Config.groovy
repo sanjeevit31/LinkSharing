@@ -127,3 +127,18 @@ log4j = {
            'net.sf.ehcache.hibernate'
 }
 
+grails.resources.modules = {
+    application {
+        resource url:'/js/application.js'
+    }
+
+ /*   prototype {
+        resource url:'/js/prototype.js'
+    }
+    scriptaculous {
+        resource url:'/js/scriptaculous.js'
+    }*/
+    jquery{
+        resource url:'/js/jquery.js'
+    }
+}
