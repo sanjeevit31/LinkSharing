@@ -39,6 +39,7 @@ class ResourceImplService {
           println file
 
           params.url_path=file.getAbsolutePath()
+
       }
       catch (Exception e){
         println 'from exception of upload'
@@ -50,6 +51,7 @@ class ResourceImplService {
 
   }
     public  void resourceList(Object params,NewUser newser){
+        
 
         def topic =   Topic.load(params.topicid)
         println topic

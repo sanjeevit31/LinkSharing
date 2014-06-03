@@ -7,6 +7,8 @@ import grails.transaction.Transactional
 //
 //@Transactional(readOnly = true)
 class ResourceController {
+    def mailService
+
     ResourceImplService resourceImplService;
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
@@ -138,10 +140,36 @@ class ResourceController {
 
     }
     def hi(){
+
         println 'hi............................'
         println params
         resourceImplService.readWriteEntryForResource(params)
-        render ''
 
+
+        render 'success'
+    }
+
+def mail(){
+    mailService.sendMail {
+        to "sanjeev.jha@intelligrape.com"
+        subject "Hello Fred"
+        body 'How are you?'
+        //attachBytes "Some-File-Name.xml", "text/xml", contentOrder.getBytes("UTF-8")
+//        attachBytes './web-app/images/san.jpg','image/jpg', new File('./web-app/images/san.jpg').readBytes()
+    }
+    println "mail sent.."
+    render 'success'
+
+    }
+
+    def download()
+    {
+        File file=new File('/home/sanjeev/LinkSharing/web-app/LinkSharing/ResourcesImg/java/29052014143926unnamed.gif')
+       // def file = new FileOutputStream(resource(dir:'LinkSharing/ResourcesImg/java/',file: '29052014143926unnamed.gif'))
+        def out = new BufferedOutputStream(new FileOutputStream(file))
+        out << new URL('http://www.google.com').openStream()
+       // out.close()
+        println file
+        render 'success'
     }
 }

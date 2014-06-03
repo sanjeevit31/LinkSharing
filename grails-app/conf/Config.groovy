@@ -11,11 +11,11 @@
 //    grails.config.locations << "file:" + System.properties["${appName}.config.location"]
 // }
 
-grails{
-    mail{
-        host="smtp"
-    }
-}
+//grails{
+//    mail{
+//        host="smtp"
+//    }
+//}
 
 grails.project.groupId = appName // change this to alter the default package name and Maven publishing destination
 
@@ -140,5 +140,18 @@ grails.resources.modules = {
     }*/
     jquery{
         resource url:'/js/jquery.js'
+    }
+}
+
+grails {
+    mail {
+        host = "smtp.gmail.com"
+        port = 465
+        username = "sanjeev.jha@intelligrape.com"
+        password = "1989it31"
+        props = ["mail.smtp.auth":"true",
+                "mail.smtp.socketFactory.port":"465",
+                "mail.smtp.socketFactory.class":"javax.net.ssl.SSLSocketFactory",
+                "mail.smtp.socketFactory.fallback":"false"]
     }
 }

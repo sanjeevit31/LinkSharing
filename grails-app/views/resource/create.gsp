@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="layout" content="main">
+		<meta name="layout" content="linksharing">
 		<g:set var="entityName" value="${message(code: 'resource.label', default: 'Resource')}" />
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
         <g:javascript src="linksharing_basic.js"></g:javascript>

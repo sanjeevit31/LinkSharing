@@ -44,12 +44,18 @@
 
             <td>${resourceInstance.type}</td>
             <g:if test="${resourceInstance.type=='Link'}">
-            <td>
-                <g:link url="${resourceInstance.url_path}">Click To See Link</g:link>
+            <td id="td${i}">
+                <g:hiddenField  value="${resourceInstance.url_path}" name="url${i}" id="tdtd${i}"></g:hiddenField>
+                <g:hiddenField  value="Link" name="Link${i}" id="Linktd${i}"></g:hiddenField>
+                <g:link  url="#">Click To See Link</g:link>
             </td>
             </g:if>
             <g:else>
-                <td><g:remoteLink controller="resource" action="download" params="['path':resourceInstance.url_path]">DownLoad</g:remoteLink>
+                <td id="td${i}">
+                %{--<g:remoteLink controller="resource" action="download" params="['path':resourceInstance.url_path]">DownLoad</g:remoteLink>--}%
+                <g:hiddenField  value="${resourceInstance.url_path}" name="url${i}" id="tdtd${i}"></g:hiddenField>
+                <g:hiddenField  value="DownLoad" name="Link${i}" id="Linktd${i}"></g:hiddenField>
+                <g:link  url="#">Download</g:link>
                 </td>
             </g:else>
 
@@ -65,15 +71,27 @@ $(document).ready(function(){
        var trId=$(this).attr("id");
         var tdId="resourceId"+trId;
         var newId='new'+trId;
-       $('#'+newId).hide()
-//        alert(".."+tdId)
-        var resourceId=($("#"+tdId).val())
+             if(($('#'+newId).text())=='new'){
+                     $('#'+newId).hide()
+                    var resourceId=($("#"+tdId).val())
+
+                 jQuery.ajax({type:'POST',data:{'resourceId':resourceId}, url:'/LinkSharing/resource/hi?user=${session.user}',
+                 success:function(data,textStatus){/*alert('hello'+data)*/},
+                 error:function(XMLHttpRequest,textStatus,errorThrown){}});return false;
+      }
 
 
-        jQuery.ajax({type:'POST',data:{'resourceId':resourceId}, url:'/LinkSharing/resource/hi?user=${session.user}',
-            success:function(data,textStatus){/*alert('hello'+data)*/},
-            error:function(XMLHttpRequest,textStatus,errorThrown){}});return false;
+
+
     })
+    $('td').click(function(){
+      var tdId =  $(this).attr('id')
+       var url=$('#td'+tdId).val()
+        if($('#Link'+tdId).val()=='Link')
+       window.open(url)
+        else
+        alert('Download')
+        })
 })
 </script>
 </body>

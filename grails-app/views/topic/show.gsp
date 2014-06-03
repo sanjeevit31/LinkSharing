@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html">
 	<head>
-		<meta name="layout" content="main">
+		<meta name="layout" content="linksharing">
 		<g:set var="entityName" value="${message(code: 'topic.label', default: 'Topic')}" />
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 	</head>
