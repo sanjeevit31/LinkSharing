@@ -3,9 +3,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html">
 	<head>
-		<meta name="layout" content="linksharing">
+		<meta name="layout" content="userDashBord">
 		<g:set var="entityName" value="${message(code: 'topic.label', default: 'Topic')}" />
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
+        <link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css">
+        <link rel="stylesheet" href="${resource(dir: 'css' ,file: 'formlogin.css')}">
 	</head>
 	<body>
     <script>
@@ -35,7 +37,7 @@
         })
     </script>
 		<a href="#show-topic" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
+		%{--<div class="nav" role="navigation">
 			<ul>
                 <li>${session.name}</li>
 				<li><a class="home" href="${createLink(uri: '/newUser/dashBord')}"><g:message code="default.home.label"/></a></li>
@@ -44,7 +46,7 @@
 				<li><g:link controller="subscribed" action="index">Subscribed List</g:link></li>
 
 			</ul>
-		</div>
+		</div>--}%
 		<div id="show-topic" class="content scaffold-show" role="main">
 			<h1><g:message code="default.show.label" args="[entityName]" /></h1>
 			<g:if test="${flash.message}">

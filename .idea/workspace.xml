@@ -74,37 +74,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="show.gsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/views/topic/show.gsp">
+      <file leaf-file-name="index.gsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/views/subscribed/index.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="48" selection-start="153" selection-end="153" vertical-scroll-proportion="0.0" vertical-offset="1485" max-vertical-offset="2520">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="topicsResource.gsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/views/resource/topicsResource.gsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="92" column="23" selection-start="3010" selection-end="3010" vertical-scroll-proportion="0.0" vertical-offset="1380" max-vertical-offset="1545">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BuildConfig.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="68" column="5" selection-start="3061" selection-end="3061" vertical-scroll-proportion="0.0" vertical-offset="426" max-vertical-offset="1350">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Config.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/conf/Config.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="153" column="78" selection-start="5950" selection-end="5950" vertical-scroll-proportion="0.0" vertical-offset="2295" max-vertical-offset="2445">
+            <state line="8" column="11" selection-start="308" selection-end="308" vertical-scroll-proportion="-0.0" vertical-offset="120" max-vertical-offset="960">
               <folding />
             </state>
           </provider>
@@ -113,37 +86,16 @@
       <file leaf-file-name="ResourceController.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/linksharing/ResourceController.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="138" column="34" selection-start="4187" selection-end="4187" vertical-scroll-proportion="0.0" vertical-offset="1766" max-vertical-offset="2700">
+            <state line="177" column="24" selection-start="5163" selection-end="5163" vertical-scroll-proportion="0.0" vertical-offset="2655" max-vertical-offset="2910">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Topic.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/domain/com/linksharing/Topic.groovy">
-          <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-            <state />
-          </provider>
+      <file leaf-file-name="CountryController.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/linksharing/CountryController.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="6" selection-start="31" selection-end="31" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="420">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResourceImplService.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/services/com/linksharing/ResourceImplService.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="8" selection-start="1822" selection-end="1822" vertical-scroll-proportion="0.0" vertical-offset="795" max-vertical-offset="1935">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResourceReadUnreadStatusService.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/services/com/linksharing/ResourceReadUnreadStatusService.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="30" selection-start="87" selection-end="111" vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="255">
+            <state line="2" column="6" selection-start="31" selection-end="31" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="195">
               <folding />
             </state>
           </provider>
@@ -152,16 +104,21 @@
       <file leaf-file-name="NewUserImplService.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/services/com/linksharing/NewUserImplService.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="6" selection-start="87" selection-end="87" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
-              <folding />
+            <state line="44" column="8" selection-start="1071" selection-end="1071" vertical-scroll-proportion="0.0" vertical-offset="271" max-vertical-offset="915">
+              <folding>
+                <element signature="e#25#64#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ValidateusersFilters.groovy" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/grails-app/conf/com/linksharing/ValidateusersFilters.groovy">
+      <file leaf-file-name="NewUser.groovy" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/grails-app/domain/com/linksharing/NewUser.groovy">
+          <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="85" selection-start="160" selection-end="160" vertical-scroll-proportion="0.1313485" vertical-offset="0" max-vertical-offset="571">
+            <state line="9" column="14" selection-start="153" selection-end="156" vertical-scroll-proportion="0.12390925" vertical-offset="64" max-vertical-offset="660">
               <folding />
             </state>
           </provider>
@@ -177,22 +134,9 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/web-app/css/minu.css" />
-        <option value="$PROJECT_DIR$/grails-app/services/com/linksharing/NewUserImplService.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/views/newUser/dashBord.gsp" />
-        <option value="$PROJECT_DIR$/grails-app/views/topic/create.gsp" />
-        <option value="$PROJECT_DIR$/web-app/css/formlogin.css" />
-        <option value="$PROJECT_DIR$/grails-app/conf/com/linksharing/ValidateusersFilters.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/views/newUser/show.gsp" />
-        <option value="$PROJECT_DIR$/grails-app/views/layouts/mylayout.gsp" />
-        <option value="$PROJECT_DIR$/grails-app/views/newUser/login.gsp" />
-        <option value="$PROJECT_DIR$/grails-app/views/layouts/userDashBord.gsp" />
-        <option value="$PROJECT_DIR$/grails-app/views/layouts/test.gsp" />
         <option value="$PROJECT_DIR$/grails-app/views/subscribed/create.gsp" />
-        <option value="$PROJECT_DIR$/grails-app/views/subscribed/index.gsp" />
         <option value="$PROJECT_DIR$/grails-app/views/subscribed/edit.gsp" />
         <option value="$PROJECT_DIR$/grails-app/views/subscribed/show.gsp" />
-        <option value="$PROJECT_DIR$/grails-app/views/topic/edit.gsp" />
         <option value="$PROJECT_DIR$/grails-app/views/topic/_form.gsp" />
         <option value="$PROJECT_DIR$/grails-app/views/subscribed/_form.gsp" />
         <option value="$PROJECT_DIR$/grails-app/controllers/com/linksharing/TopicController.groovy" />
@@ -205,11 +149,8 @@
         <option value="$PROJECT_DIR$/grails-app/domain/com/linksharing/Resource.groovy" />
         <option value="$PROJECT_DIR$/grails-app/views/newUser/_form.gsp" />
         <option value="$PROJECT_DIR$/grails-app/i18n/messages.properties" />
-        <option value="$PROJECT_DIR$/grails-app/controllers/com/linksharing/NewUserController.groovy" />
         <option value="$PROJECT_DIR$/grails-app/controllers/linksharing/HelloController.groovy" />
         <option value="$PROJECT_DIR$/grails-app/views/hello/ajaxDemo.gsp" />
-        <option value="$PROJECT_DIR$/grails-app/views/topic/index.gsp" />
-        <option value="$PROJECT_DIR$/grails-app/views/resource/_form.gsp" />
         <option value="$PROJECT_DIR$/grails-app/views/layouts/lnkshr.gsp" />
         <option value="$PROJECT_DIR$/grails-app/views/layouts/main.gsp" />
         <option value="$PROJECT_DIR$/web-app/js/linksharing_basic.js" />
@@ -219,15 +160,31 @@
         <option value="$PROJECT_DIR$/web-app/js/jquery.js" />
         <option value="$PROJECT_DIR$/grails-app/domain/com/linksharing/NewUser.groovy" />
         <option value="$PROJECT_DIR$/grails-app/domain/com/linksharing/ResourceReadUnreadStatus.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/conf/DataSource.groovy" />
         <option value="$PROJECT_DIR$/grails-app/views/layouts/linksharing.gsp" />
-        <option value="$PROJECT_DIR$/grails-app/views/topic/show.gsp" />
-        <option value="$PROJECT_DIR$/grails-app/views/resource/create.gsp" />
         <option value="$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/views/resource/topicsResource.gsp" />
         <option value="$PROJECT_DIR$/grails-app/conf/Config.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/controllers/com/linksharing/ResourceController.groovy" />
         <option value="$PROJECT_DIR$/grails-app/services/com/linksharing/ResourceImplService.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/conf/DataSource.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/views/resource/_form.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/views/topic/create.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/views/topic/index.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/views/resource/create.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/views/layouts/userDashBord.gsp" />
+        <option value="$PROJECT_DIR$/web-app/css/minu.css" />
+        <option value="$PROJECT_DIR$/grails-app/views/topic/edit.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/views/topic/show.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/views/resource/show.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/views/resource/edit.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/views/resource/topicsResource.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/views/subscribed/index.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/views/newUser/login.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/views/newUser/create.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/views/newUser/resetPasswordForm.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/views/newUser/resetPassword.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/domain/com/linksharing/ResetPassword.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/controllers/com/linksharing/NewUserController.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/controllers/com/linksharing/ResourceController.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/services/com/linksharing/NewUserImplService.groovy" />
       </list>
     </option>
   </component>
@@ -235,10 +192,10 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="67" />
-    <option name="y" value="24" />
-    <option name="width" value="1293" />
-    <option name="height" value="744" />
+    <option name="x" value="66" />
+    <option name="y" value="-4" />
+    <option name="width" value="1295" />
+    <option name="height" value="773" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -356,90 +313,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinkSharing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinkSharing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinkSharing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinkSharing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinkSharing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinkSharing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="grails-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinkSharing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinkSharing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="grails-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="conf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinkSharing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LinkSharing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="grails-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="conf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="linksharing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Problems">
           <PATH>
@@ -569,6 +442,130 @@
             <PATH_ELEMENT USER_OBJECT="Root">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LinkSharing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LinkSharing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LinkSharing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LinkSharing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LinkSharing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grails-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LinkSharing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LinkSharing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grails-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LinkSharing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LinkSharing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grails-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="domain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="linksharing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LinkSharing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LinkSharing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grails-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="domain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LinkSharing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LinkSharing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grails-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="linksharing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LinkSharing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -949,12 +946,14 @@
       <workItem from="1401643448235" duration="1638000" />
       <workItem from="1401694703016" duration="1769000" />
       <workItem from="1401718704539" duration="1180000" />
-      <workItem from="1401772638193" duration="449000" />
+      <workItem from="1401772638193" duration="22021000" />
+      <workItem from="1401856406568" duration="13984000" />
+      <workItem from="1401888774577" duration="2112000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="417345000" />
+    <option name="totallyTimeSpent" value="455013000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -977,8 +976,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="24" width="1293" height="744" extended-state="1" />
-    <editor active="true" />
+    <frame x="66" y="-4" width="1295" height="773" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
@@ -994,13 +993,13 @@
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32933652" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32475883" sideWeight="0.4995971" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3242594" sideWeight="0.4977169" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2893685" sideWeight="0.4977169" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32840237" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17734724" sideWeight="0.4995971" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32858273" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39875388" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41588786" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17694156" sideWeight="0.1187801" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Grails View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22222222" sideWeight="0.6532905" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23298639" sideWeight="0.5008026" order="5" side_tool="true" content_ui="tabs" />
@@ -1042,133 +1041,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///usr/lib/jvm/java-1.7.0-openjdk-amd64/jre/lib/rt.jar!/java/io/File.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="20" selection-start="3328" selection-end="3328" vertical-scroll-proportion="0.28" vertical-offset="1234" max-vertical-offset="2535" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/newUser/_form.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="42" selection-start="1824" selection-end="1839" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="1395" />
-      </provider>
-    </entry>
-    <entry file="jar:///opt/grails/dist/grails-core-2.3.8-sources.jar!/org/codehaus/groovy/grails/validation/ValidatorConstraint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="13" selection-start="1876" selection-end="1876" vertical-scroll-proportion="-0.79569894" vertical-offset="864" max-vertical-offset="2490" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/work/plugins/jquery-validation-1.9/grails-app/i18n/messages.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="571" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/work/plugins/hibernate-3.6.10.13/grails-app/i18n/messages.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="571" />
-      </provider>
-    </entry>
-    <entry file="jar:///opt/grails/dist/grails-web-2.3.8-sources.jar!/org/codehaus/groovy/grails/plugins/web/api/CommonWebApi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="101" column="39" selection-start="3801" selection-end="3829" vertical-scroll-proportion="0.3530466" vertical-offset="778" max-vertical-offset="3180">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///opt/grails/lib/org.springframework/spring-context/jars/spring-context-3.2.8.RELEASE-sources.jar!/org/springframework/validation/Errors.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="17" selection-start="1433" selection-end="1433" vertical-scroll-proportion="0.3322091" vertical-offset="193" max-vertical-offset="4365" />
-      </provider>
-    </entry>
-    <entry file="jar:///opt/grails/dist/grails-plugin-rest-2.3.8-sources.jar!/org/grails/plugins/web/rest/api/ControllersRestApi.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="50" selection-start="3557" selection-end="3557" vertical-scroll-proportion="-2.75" vertical-offset="2435" max-vertical-offset="3015" />
-      </provider>
-    </entry>
-    <entry file="jar:///opt/grails/dist/grails-plugin-controllers-2.3.8-sources.jar!/org/codehaus/groovy/grails/web/metaclass/RenderDynamicMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="16" selection-start="3662" selection-end="3662" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="8760" />
-      </provider>
-    </entry>
-    <entry file="jar:///opt/grails/dist/grails-plugin-controllers-2.3.8-sources.jar!/org/codehaus/groovy/grails/plugins/web/api/ControllersApi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="306" column="5" selection-start="10463" selection-end="11028" vertical-scroll-proportion="-1.7127072" vertical-offset="4590" max-vertical-offset="6690">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/integration/com/linksharing/UnitTestSpec.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="6" selection-start="65" selection-end="65" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/linksharing/FileUploadController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="15" selection-start="3054" selection-end="3054" vertical-scroll-proportion="-20.304348" vertical-offset="1078" max-vertical-offset="1680" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/i18n/messages.properties">
-      <provider editor-type-id="ResourceBundle">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="18" selection-start="3399" selection-end="3399" vertical-scroll-proportion="-16.423077" vertical-offset="428" max-vertical-offset="945" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/linksharing/AuthorController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="21" selection-start="2439" selection-end="2439" vertical-scroll-proportion="-9.869565" vertical-offset="1108" max-vertical-offset="1650" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/linksharing/HelloController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="7" selection-start="1179" selection-end="1190" vertical-scroll-proportion="-15.347826" vertical-offset="427" max-vertical-offset="960" />
-      </provider>
-    </entry>
-    <entry file="jar:///opt/grails/dist/grails-plugin-gsp-2.3.8-sources.jar!/org/codehaus/groovy/grails/plugins/web/taglib/JavascriptTagLib.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="236" column="6" selection-start="9220" selection-end="9234" vertical-scroll-proportion="0.0" vertical-offset="3072" max-vertical-offset="6975" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/hello/ajaxDemo.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="33" selection-start="258" selection-end="264" vertical-scroll-proportion="-2.8510637" vertical-offset="46" max-vertical-offset="615" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/resource/_form.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="4" selection-start="1008" selection-end="1008" vertical-scroll-proportion="-2.4042554" vertical-offset="307" max-vertical-offset="1050" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/hello/create.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="40" selection-start="33" selection-end="68" vertical-scroll-proportion="0.086872585" vertical-offset="0" max-vertical-offset="660" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/layouts/lnkshr.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="4" selection-start="1297" selection-end="1297" vertical-scroll-proportion="-12.5" vertical-offset="0" max-vertical-offset="540" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web-app/js/linksharing_basic.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="0" selection-start="1112" selection-end="1112" vertical-scroll-proportion="0.0" vertical-offset="95" max-vertical-offset="660" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/topic/index.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="60" selection-start="2859" selection-end="2872" vertical-scroll-proportion="-6.06383" vertical-offset="765" max-vertical-offset="1395" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/work/plugins/jquery-validation-1.9/web-app/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="177" column="0" selection-start="3202" selection-end="3202" vertical-scroll-proportion="0.0" vertical-offset="2448" max-vertical-offset="4200" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/resource/index.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="31" selection-start="1579" selection-end="1579" vertical-scroll-proportion="-4.638298" vertical-offset="352" max-vertical-offset="1020" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web-app/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="473" column="23" selection-start="8620" selection-end="8620" vertical-scroll-proportion="0.0" vertical-offset="6922" max-vertical-offset="9255" />
@@ -1179,29 +1051,9 @@
         <state line="3" column="31519" selection-start="95759" selection-end="95759" vertical-scroll-proportion="0.073891625" vertical-offset="0" max-vertical-offset="609" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/conf/DataSource.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="43" selection-start="220" selection-end="220" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="945" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/linksharing/TopicController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="78" selection-start="1018" selection-end="1089" vertical-scroll-proportion="0.0" vertical-offset="480" max-vertical-offset="2025" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/layouts/main.gsp">
       <provider selected="true" editor-type-id="text-editor">
         <state line="28" column="31" selection-start="1535" selection-end="1535" vertical-scroll-proportion="-15.708333" vertical-offset="43" max-vertical-offset="630" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/layouts/linksharing.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="0" selection-start="1256" selection-end="1256" vertical-scroll-proportion="0.9895833" vertical-offset="0" max-vertical-offset="750" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/linksharing/NewUserController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="22" selection-start="727" selection-end="727" vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="2730" />
       </provider>
     </entry>
     <entry file="jar:///opt/grails/dist/grails-plugin-gsp-2.3.8-sources.jar!/org/codehaus/groovy/grails/plugins/web/taglib/ApplicationTagLib.groovy">
@@ -1217,27 +1069,12 @@
         <state line="11" column="55" selection-start="247" selection-end="254" vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="285" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/domain/com/linksharing/NewUser.groovy">
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="61" selection-start="932" selection-end="932" vertical-scroll-proportion="0.0" vertical-offset="86" max-vertical-offset="660">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/domain/com/linksharing/Resource.groovy">
       <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="47" selection-start="333" selection-end="340" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="360" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/resource/create.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="48" selection-start="73" selection-end="73" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="675" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/target/work/plugins/mail-1.0.5/grails-app/services/grails/plugin/mail/MailService.groovy">
@@ -1264,47 +1101,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="5" selection-start="3061" selection-end="3061" vertical-scroll-proportion="0.0" vertical-offset="718" max-vertical-offset="1350">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/conf/Config.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="153" column="78" selection-start="5950" selection-end="5950" vertical-scroll-proportion="0.0" vertical-offset="756" max-vertical-offset="1365">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/topic/show.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="48" selection-start="153" selection-end="153" vertical-scroll-proportion="0.0" vertical-offset="1485" max-vertical-offset="2520">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/resource/topicsResource.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="23" selection-start="3010" selection-end="3010" vertical-scroll-proportion="0.0" vertical-offset="975" max-vertical-offset="1545">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web-app/LinkSharing/ResourcesImg/java/260520141756109 (1).groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web-app/LinkSharing/ResourcesImg/java/29052014143926unnamed.gif">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/linksharing/ResourceController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="138" column="34" selection-start="4187" selection-end="4187" vertical-scroll-proportion="0.0" vertical-offset="1766" max-vertical-offset="2700">
-          <folding />
-        </state>
+        <state line="68" column="5" selection-start="3061" selection-end="3061" vertical-scroll-proportion="0.0" vertical-offset="718" max-vertical-offset="1350" />
       </provider>
     </entry>
     <entry file="jar:///usr/lib/jvm/java-1.7.0-openjdk-amd64/jre/lib/rt.jar!/java/lang/String.class">
@@ -1312,11 +1109,9 @@
         <state line="101" column="20" selection-start="3752" selection-end="3761" vertical-scroll-proportion="0.3321976" vertical-offset="1305" max-vertical-offset="3315" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/services/com/linksharing/ResourceImplService.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="8" selection-start="1822" selection-end="1822" vertical-scroll-proportion="0.0" vertical-offset="795" max-vertical-offset="1830">
-          <folding />
-        </state>
+    <entry file="file://$PROJECT_DIR$/web-app/LinkSharing/ResourcesImg/java/29052014143926unnamed.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/services/com/linksharing/ResourceReadUnreadStatusService.groovy">
@@ -1326,16 +1121,222 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/services/com/linksharing/NewUserImplService.groovy">
+    <entry file="file://$PROJECT_DIR$/web-app/LinkSharing/ResourcesImg/java/260520141756109 (1).groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="6" selection-start="87" selection-end="87" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="571" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/Config.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="153" column="78" selection-start="5950" selection-end="5950" vertical-scroll-proportion="0.0" vertical-offset="756" max-vertical-offset="1365" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/services/com/linksharing/ResourceImplService.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="0" selection-start="1840" selection-end="1840" vertical-scroll-proportion="0.0" vertical-offset="587" max-vertical-offset="1935">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/linksharing/TopicController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="78" selection-start="1018" selection-end="1089" vertical-scroll-proportion="43.913044" vertical-offset="1475" max-vertical-offset="2010">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/conf/com/linksharing/ValidateusersFilters.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="85" selection-start="160" selection-end="160" vertical-scroll-proportion="0.1313485" vertical-offset="0" max-vertical-offset="571">
+        <state line="9" column="44" selection-start="290" selection-end="310" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/DataSource.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="34" selection-start="1252" selection-end="1252" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="975" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/layouts/mylayout.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="593">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/layouts/lnkshr.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="4" selection-start="1297" selection-end="1297" vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="540">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/topic/index.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="85" selection-start="390" selection-end="564" vertical-scroll-proportion="-3.1914895" vertical-offset="0" max-vertical-offset="1425">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/topic/create.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="85" selection-start="251" selection-end="425" vertical-scroll-proportion="-2.2340426" vertical-offset="0" max-vertical-offset="705">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/layouts/linksharing.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="0" selection-start="1234" selection-end="1255" vertical-scroll-proportion="-17.5" vertical-offset="135" max-vertical-offset="750">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/newUser/dashBord.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="41" selection-start="193" selection-end="193" vertical-scroll-proportion="-3.1914895" vertical-offset="0" max-vertical-offset="435">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web-app/css/minu.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="7" selection-start="7" selection-end="7" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1395" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/resource/create.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="18" selection-start="658" selection-end="980" vertical-scroll-proportion="-5.425532" vertical-offset="0" max-vertical-offset="705" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/topic/edit.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="80" selection-start="1033" selection-end="1033" vertical-scroll-proportion="-6.06383" vertical-offset="0" max-vertical-offset="720" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/topic/show.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="140" column="35" selection-start="5891" selection-end="5891" vertical-scroll-proportion="-2.3829787" vertical-offset="1988" max-vertical-offset="2550">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/resource/edit.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="18" selection-start="452" selection-end="902" vertical-scroll-proportion="0.42704627" vertical-offset="0" max-vertical-offset="705" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/resource/_form.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="82" selection-start="291" selection-end="369" vertical-scroll-proportion="0.22613065" vertical-offset="0" max-vertical-offset="1050" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/resource/show.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="18" selection-start="449" selection-end="859" vertical-scroll-proportion="-5.425532" vertical-offset="0" max-vertical-offset="1290" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/resource/topicsResource.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="75" column="40" selection-start="2587" selection-end="2587" vertical-scroll-proportion="-2.8723404" vertical-offset="990" max-vertical-offset="1680">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/layouts/userDashBord.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="14" selection-start="1186" selection-end="1186" vertical-scroll-proportion="0.0" vertical-offset="525" max-vertical-offset="1470">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/newUser/login.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="9" selection-start="1503" selection-end="1503" vertical-scroll-proportion="0.0" vertical-offset="690" max-vertical-offset="840">
+          <folding>
+            <marker date="1401870042968" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1401870042968" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/newUser/create.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="48" selection-start="73" selection-end="73" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="660">
+          <folding>
+            <marker date="1401870262632" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1401870262632" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1401870262632" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1401870262632" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/newUser/resetPassword.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="67" selection-start="502" selection-end="502" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="495">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/com/linksharing/ResetPassword.groovy">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="26" selection-start="110" selection-end="110" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="225">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/newUser/resetPasswordForm.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="54" selection-start="542" selection-end="549" vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="495">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/linksharing/CountryController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="6" selection-start="31" selection-end="31" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="195">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/linksharing/NewUserController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="123" column="44" selection-start="3362" selection-end="3366" vertical-scroll-proportion="0.33333334" vertical-offset="1651" max-vertical-offset="2910">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/subscribed/index.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="11" selection-start="308" selection-end="308" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="960">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/linksharing/ResourceController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="177" column="24" selection-start="5163" selection-end="5163" vertical-scroll-proportion="0.0" vertical-offset="2655" max-vertical-offset="2910">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/services/com/linksharing/NewUserImplService.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="8" selection-start="1071" selection-end="1071" vertical-scroll-proportion="0.0" vertical-offset="271" max-vertical-offset="915">
+          <folding>
+            <element signature="e#25#64#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/com/linksharing/NewUser.groovy">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="14" selection-start="153" selection-end="156" vertical-scroll-proportion="0.12390925" vertical-offset="64" max-vertical-offset="660">
           <folding />
         </state>
       </provider>

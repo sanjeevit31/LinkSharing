@@ -2,15 +2,16 @@ package com.linksharing
 
 import org.springframework.web.multipart.commons.CommonsMultipartFile
 
+import javax.servlet.ServletContext
+
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 //
 //@Transactional(readOnly = true)
 class ResourceController {
-    def mailService
 
     ResourceImplService resourceImplService;
-    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+    static allowedMethods = [save: "POST", update: "POST", delete: "DELETE"]
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
@@ -84,6 +85,8 @@ class ResourceController {
 
     @Transactional
     def update(Resource resourceInstance) {
+        println 'from resource update'
+        println 'params:'+params
         if (resourceInstance == null) {
             notFound()
             return
@@ -93,7 +96,19 @@ class ResourceController {
             respond resourceInstance.errors, view:'edit'
             return
         }
-
+//        String type=params.type
+//
+//        if(type!=null && !type.equals(''))
+//        {
+//            if(type.equals('Document')){
+//                resourceImplService.upload(servletContext,request,type,params)
+//
+//                resourceInstance.properties=params;
+//                println 'from resource update after properties chnge'
+//
+//            }
+//
+//        }
         resourceInstance.save flush:true
 
         request.withFormat {
@@ -134,42 +149,41 @@ class ResourceController {
         }
     }
 
-    def topicsResource(){
-        //render params.topicid
+
+
+    def topicsResource(Integer max){
+        println 'from topic Resource'
+        println 'params:'+params
        resourceImplService.resourceList(params,session.user)
-
     }
-    def hi(){
 
-        println 'hi............................'
-        println params
+
+
+    def resourceReadStatus(){
+        println 'from resourceReadStatus'
+        println 'params:'+params
         resourceImplService.readWriteEntryForResource(params)
-
-
         render 'success'
     }
 
-def mail(){
-    mailService.sendMail {
-        to "sanjeev.jha@intelligrape.com"
-        subject "Hello Fred"
-        body 'How are you?'
-        //attachBytes "Some-File-Name.xml", "text/xml", contentOrder.getBytes("UTF-8")
-//        attachBytes './web-app/images/san.jpg','image/jpg', new File('./web-app/images/san.jpg').readBytes()
-    }
-    println "mail sent.."
-    render 'success'
 
-    }
 
-    def download()
-    {
-        File file=new File('/home/sanjeev/LinkSharing/web-app/LinkSharing/ResourcesImg/java/29052014143926unnamed.gif')
-       // def file = new FileOutputStream(resource(dir:'LinkSharing/ResourcesImg/java/',file: '29052014143926unnamed.gif'))
-        def out = new BufferedOutputStream(new FileOutputStream(file))
-        out << new URL('http://www.google.com').openStream()
-       // out.close()
-        println file
+    def mail(){
+           sendMail {
+             to "sanjeev.jha@intelligrape.com"
+             subject "Hello Fred"
+             body 'How are you?'
+         }
+        println "mail sent.."
         render 'success'
+    }
+
+
+
+
+    def download() {
+        println 'from download1'
+        println 'params:'+params
+        Map map = resourceImplService.download(params,response)
     }
 }

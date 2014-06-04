@@ -3,10 +3,12 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="layout" content="linksharing">
+		<meta name="layout" content="userDashBord">
 		<g:set var="entityName" value="${message(code: 'topic.label', default: 'Topic')}" />
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css">
+        <link rel="stylesheet" href="${resource(dir: 'css' ,file: 'formlogin.css')}">
 	</head>
 	<body>
     <script>
@@ -20,13 +22,13 @@ alert()
 
     </script>
 		<a href="#list-topic" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-                <li>${session.name}</li>
-				<li><a class="home" href="${createLink(uri: '/newUser/dashBord')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-			</ul>
-		</div>
+		%{--<div class="nav" role="navigation">--}%
+			%{--<ul>--}%
+                %{--<li>${session.name}</li>--}%
+				%{--<li><a class="home" href="${createLink(uri: '/newUser/dashBord')}"><g:message code="default.home.label"/></a></li>--}%
+				%{--<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>--}%
+			%{--</ul>--}%
+		%{--</div>--}%
 		<div id="list-topic" class="content scaffold-list" role="main">
 			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
 			<g:if test="${flash.message}">

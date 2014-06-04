@@ -6,7 +6,9 @@ import org.codehaus.groovy.grails.web.servlet.mvc.GrailsParameterMap
 import org.springframework.web.multipart.commons.CommonsMultipartFile
 
 import javax.servlet.ServletContext
+import javax.servlet.ServletOutputStream
 import javax.servlet.http.HttpServletRequest
+import javax.servlet.http.HttpServletResponse
 import java.text.SimpleDateFormat
 
 @Transactional
@@ -50,33 +52,25 @@ class ResourceImplService {
      map
 
   }
-    public  void resourceList(Object params,NewUser newser){
-        
 
+    public  void resourceList(Object params,NewUser newser){
         def topic =   Topic.load(params.topicid)
         println topic
         List resourceList =  Resource.findAllByTopic(topic)
-       /* //ResourceReadUnreadStatus.findAllByUsersAnd
-        List resourceReadUnreadStatusList=  ResourceReadUnreadStatus.findAllByResourceInList(resourceList)
-
-        println 'resourcelist'+resourceReadUnreadStatusList.size()*/
-       def readStatusList=ResourceReadUnreadStatus.createCriteria().list {
-           inList('resource',resourceList)
-           /*'in'(resource,resourceList)*/
-            and{
-                eq('users',newser)
-            }
-        }
-
-     println readStatusList.size()+'..................................................................'
-
-
+        def readStatusList=ResourceReadUnreadStatus.createCriteria().list {
+                      inList('resource',resourceList)
+                     and{
+                            eq('users',newser)
+                      }
+              }
+        println readStatusList.size()+'..................................................................'
         List read=[]
         List readd=[]
 
         readStatusList.each {it->
            readd.add(it.resource.id)
         }
+
         resourceList.each {it->
             read.add(readd.contains(it.id))
         }
@@ -116,6 +110,21 @@ class ResourceImplService {
         resourceReadUnreadStatus.status='Yes'
         resourceReadUnreadStatus.save()
         }
+
+   public Map download(Object params,HttpServletResponse response){
+       println params
+       String path=params.path
+       def file = new File(path)
+       if (file.exists()) {
+           println 'from download2'
+           response.setContentType("application/octet-stream") // or or image/JPEG or text/xml or whatever type the file is
+           response.setHeader("Content-disposition", "attachment;filename=\"${file.name}\"")
+           response.outputStream << file.bytes
+           [success:'success']
+    }
+
+
+    }
 
     }
 

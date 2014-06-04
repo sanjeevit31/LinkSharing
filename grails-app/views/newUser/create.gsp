@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="layout" content="main">
+		<meta name="layout" content="linksharing">
 		<g:set var="entityName" value="${message(code: 'newUser.label', default: 'NewUser')}" />
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
 	</head>

@@ -9,6 +9,7 @@ import grails.transaction.Transactional
 class NewUserController {
     NewUserImplService newUserImplService
 
+
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
@@ -171,6 +172,18 @@ class NewUserController {
 
         Map map=newUserImplService.dashBord(newUser)
         render(view: 'dashBord',model: [msg:'You are SuccessFully logined.......',map:map])
+    }
+
+    def resetPasswordForm(){
+
+    }
+    @Transactional(readOnly = false)
+    def resetPassword(){
+        println 'from action resetPassword of NewUser'
+        println 'params:'+params
+        Map map =  newUserImplService.resetPassword(params)
+
+
     }
 
 }

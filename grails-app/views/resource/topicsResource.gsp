@@ -33,7 +33,7 @@
     <g:each in="${params.resourceList}" status="i" var="resourceInstance">
         <tr class="${(i % 2) == 0 ? 'even' : 'odd'}" id="${i}">
 
-            <td>${resourceInstance.heading}</td>
+            <td><g:link action="show" id="${resourceInstance.id}">${resourceInstance.heading}</g:link></td>
             <td style="font-size: 10px" id="status">
                <span id="new${i}">${params.read.get(i)?'':'new'}</span>
                 <g:hiddenField name="resourceId" id="resourceId${i}" value="${resourceInstance.id}"/>
@@ -67,15 +67,16 @@
 <script>
 $(document).ready(function(){
     $('tr').click(function(){
-
+        alert('on row click')
        var trId=$(this).attr("id");
         var tdId="resourceId"+trId;
         var newId='new'+trId;
-             if(($('#'+newId).text())=='new'){
-                     $('#'+newId).hide()
+             if(($('#'+newId).text())=='new'){alert('from new')
+                     /*$('#'+newId).hide()*/
+                     $('#'+newId).text('')
                     var resourceId=($("#"+tdId).val())
 
-                 jQuery.ajax({type:'POST',data:{'resourceId':resourceId}, url:'/LinkSharing/resource/hi?user=${session.user}',
+                 jQuery.ajax({type:'POST',data:{'resourceId':resourceId}, url:'/LinkSharing/resource/resourceReadStatus?user=${session.user}',
                  success:function(data,textStatus){/*alert('hello'+data)*/},
                  error:function(XMLHttpRequest,textStatus,errorThrown){}});return false;
       }
@@ -85,12 +86,20 @@ $(document).ready(function(){
 
     })
     $('td').click(function(){
+        alert('column click')
       var tdId =  $(this).attr('id')
        var url=$('#td'+tdId).val()
         if($('#Link'+tdId).val()=='Link')
        window.open(url)
-        else
-        alert('Download')
+        else  if($('#Link'+tdId).val()=='DownLoad'){
+            alert('Download'+url)
+
+            window.open('http://localhost:8080/LinkSharing/resource/download?path='+url)
+
+
+        }
+
+
         })
 })
 </script>

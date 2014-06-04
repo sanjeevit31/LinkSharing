@@ -20,9 +20,7 @@
 </head>
 
 <body >
-<p>If you click on me, I will disappear.</p>
-<p>Click me away!</p>
-<p>Click me too!</p>
+
 
 <div id="formdiv">
     </br>
@@ -38,7 +36,7 @@
        <g:passwordField  name="password" placeholder="enter password" required="yes"></g:passwordField>
        <g:checkBox name="keepMeLogin" value="${true}"></g:checkBox>Keep me signed in
        <g:submitButton value="Submit" class="button_" name="submit"></g:submitButton>
-     <g:link action="forgotPassword">Forgot password?</g:link></br>
+     <g:link controller="newUser" action="resetPasswordForm">Forgot password?</g:link></br>
        or</br>
    </g:form>
     <g:link name="registration"  action="create" controller="newUser">

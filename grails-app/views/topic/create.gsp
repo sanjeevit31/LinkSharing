@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="layout" content="linksharing">
+		<meta name="layout" content="userDashBord">
 		<g:set var="entityName" value="${message(code: 'topic.label', default: 'Topic')}" />
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
         <link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css">
         <link rel="stylesheet" href="${resource(dir: 'css' ,file: 'formlogin.css')}">
 	</head>
 	<body>
-		<a href="#create-topic" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-                <li>${session.name}</li>
-				<li><a class="home" href="${createLink(uri: '/newUser/dashBord')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-			</ul>
-		</div>
+		%{--<a href="#create-topic" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>--}%
+		%{--<div class="nav" role="navigation">--}%
+			%{--<ul>--}%
+                %{--<li>${session.name}</li>--}%
+				%{--<li><a class="home" href="${createLink(uri: '/newUser/dashBord')}"><g:message code="default.home.label"/></a></li>--}%
+				%{--<li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>--}%
+			%{--</ul>--}%
+		%{--</div>--}%
 		<div id="create-topic" class="content scaffold-create" role="main">
 			<h1><g:message code="default.create.label" args="[entityName]" /></h1>
 			<g:if test="${flash.message}">

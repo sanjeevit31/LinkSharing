@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="layout" content="linksharing">
+		<meta name="layout" content="userDashBord">
 		<g:set var="entityName" value="${message(code: 'resource.label', default: 'Resource')}" />
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
         <g:javascript src="linksharing_basic.js"></g:javascript>
+        <link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css">
+        <link rel="stylesheet" href="${resource(dir: 'css' ,file: 'formlogin.css')}">
 	</head>
 	<body>
 		<a href="#create-resource" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-			</ul>
-		</div>
+		%{--<div class="nav" role="navigation">--}%
+			%{--<ul>--}%
+				%{--<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>--}%
+				%{--<li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>--}%
+			%{--</ul>--}%
+		%{--</div>--}%
 		<div id="create-resource" class="content scaffold-create" role="main">
 			<h1><g:message code="default.create.label" args="[entityName]" /></h1>
 			<g:if test="${flash.message}">

@@ -10,6 +10,8 @@
 <head>
 
     <g:javascript src="linksharing_basic.js"></g:javascript>
+    <g:javascript library="jquery"></g:javascript>
+    %{--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>--}%
 
     <title>Link Sharing
         <g:layoutTitle default="Grails"/>
@@ -18,6 +20,9 @@
 
     <link rel="stylesheet" href="${resource(dir: 'css', file: 'minu.css')}" type="text/css">
     <g:layoutHead/>
+    <link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css">
+    <link rel="stylesheet" href="${resource(dir: 'css' ,file: 'formlogin.css')}">
+    <r:layoutResources/>
 </head>
 
 <body onload="dateTime_()">
@@ -31,14 +36,14 @@
              <span id="time_"></span>
     </div>
     <div id="minu">
-        <b>
+       %{-- <b>
          <g:link controller="newUser" action="dashBord">
-            Welcome: ${session.name}%{--${params['map']['name']}--}%
+            Welcome: ${session.name}--}%%{--${params['map']['name']}--}%%{--
          </g:link>
 
         </b>|
         <g:link controller="newUser" action="dashBord">
-            %{--<img src="${resource(dir: 'images/skin',file: 'house.png')}" width="30px" height="30px" style="padding-left:40px;padding-top: 4px"/>--}%
+            --}%%{--<img src="${resource(dir: 'images/skin',file: 'house.png')}" width="30px" height="30px" style="padding-left:40px;padding-top: 4px"/>--}%%{--
             Home
         </g:link>|
         <g:link controller="topic" action="create">
@@ -46,12 +51,39 @@
         </g:link>|
         <g:link controller="newUser" action="logout">
             <b>Logout</b>
-        </g:link>
-       <%
-
-           %>
+        </g:link>--}%
+        <nav>
+            <ul>
+                <li><g:link controller="newUser" action="dashBord">HOME</g:link></li>
+                <li><a href="#">TOPIC</a>
+                    <ul>
+                        <li><g:link controller="topic" action="create">NEW TOPIC</g:link></li>
+                        <li><g:link controller="topic" action="index">TOPIC LIST</g:link></li>
+                        <li><g:link controller="resource" action="create">ADD RESOURCE</g:link></li>
+                         <li><a href="#">SUB MENU</a>
+                            <ul>
+                                <li><a href="#">HTML</a></li>
+                                <li><a href="#">CSS</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><g:link controller="subscribed" action="index">SUBSCRIBED TOPICS</g:link>
+                    <ul>
+                        <li><a href="#">Web Design</a></li>
+                        <li><a href="#">User Experience</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">WELCOME:${session.name}</a>
+                    <ul>
+                        <li><a href="#">USER SETTING</a></li>
+                        <li><g:link controller="newUser" action="logout">LOGOUT</g:link></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
     </div>
-
+<r:layoutResources />
 <g:layoutBody/>
 
 <div class="footer" role="contentinfo"></div>
