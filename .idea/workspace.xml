@@ -161,19 +161,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DefaultWebXmlConfig.groovy" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="DefaultWebXmlConfig.groovy" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/target/work/plugins/webxml-1.4.1/grails-app/conf/DefaultWebXmlConfig.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="0" selection-start="1284" selection-end="1284" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AbcController.groovy" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/linksharing/AbcController.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="599">
+            <state line="33" column="0" selection-start="1284" selection-end="1284" vertical-scroll-proportion="0.36173633" vertical-offset="0" max-vertical-offset="622">
               <folding />
             </state>
           </provider>
@@ -1243,12 +1234,12 @@
       <workItem from="1401718704539" duration="1180000" />
       <workItem from="1401772638193" duration="22021000" />
       <workItem from="1401856406568" duration="13984000" />
-      <workItem from="1401888774577" duration="4641000" />
+      <workItem from="1401888774577" duration="4767000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="457542000" />
+    <option name="totallyTimeSpent" value="457668000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -1695,14 +1686,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/target/work/plugins/webxml-1.4.1/grails-app/conf/DefaultWebXmlConfig.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="0" selection-start="1284" selection-end="1284" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/linksharing/AbcController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="622">
+        <state line="33" column="0" selection-start="1284" selection-end="1284" vertical-scroll-proportion="0.36173633" vertical-offset="0" max-vertical-offset="622">
           <folding />
         </state>
       </provider>
