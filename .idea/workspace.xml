@@ -164,7 +164,7 @@
       <file leaf-file-name="DefaultWebXmlConfig.groovy" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/target/work/plugins/webxml-1.4.1/grails-app/conf/DefaultWebXmlConfig.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="0" selection-start="1284" selection-end="1284" vertical-scroll-proportion="0.36173633" vertical-offset="0" max-vertical-offset="622">
+            <state line="33" column="0" selection-start="1284" selection-end="1284" vertical-scroll-proportion="0.37878788" vertical-offset="0" max-vertical-offset="594">
               <folding />
             </state>
           </provider>
@@ -248,9 +248,9 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="66" />
-    <option name="y" value="-4" />
+    <option name="y" value="24" />
     <option name="width" value="1295" />
-    <option name="height" value="773" />
+    <option name="height" value="745" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -1234,12 +1234,12 @@
       <workItem from="1401718704539" duration="1180000" />
       <workItem from="1401772638193" duration="22021000" />
       <workItem from="1401856406568" duration="13984000" />
-      <workItem from="1401888774577" duration="4767000" />
+      <workItem from="1401888774577" duration="5363000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="457668000" />
+    <option name="totallyTimeSpent" value="458264000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -1262,7 +1262,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="66" y="-4" width="1295" height="773" extended-state="6" />
+    <frame x="66" y="24" width="1295" height="745" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1686,7 +1686,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/target/work/plugins/webxml-1.4.1/grails-app/conf/DefaultWebXmlConfig.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="0" selection-start="1284" selection-end="1284" vertical-scroll-proportion="0.36173633" vertical-offset="0" max-vertical-offset="622">
+        <state line="33" column="0" selection-start="1284" selection-end="1284" vertical-scroll-proportion="0.37878788" vertical-offset="0" max-vertical-offset="594">
           <folding />
         </state>
       </provider>
