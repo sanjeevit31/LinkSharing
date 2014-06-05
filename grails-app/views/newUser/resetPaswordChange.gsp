@@ -12,9 +12,10 @@
 </head>
 
 <body>
-<g:form controller="newUser" action="">
-Enter New Password<g:passwordField name="password" id="password"/>
-Confirm Password<g:passwordField name="confirm" id="password"/>
+<g:form controller="newUser" action="passwordChange">
+Enter New Password<g:passwordField name="password" id="password"/><br>
+Confirm Password<g:passwordField name="confirm" id="password"/><br>
+    <g:hiddenField name="key" value="${key}"/>
 <g:submitButton name="submit" value="submit"></g:submitButton>
 </g:form>
 </body>

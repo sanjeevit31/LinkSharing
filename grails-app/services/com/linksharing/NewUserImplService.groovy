@@ -44,7 +44,7 @@ class NewUserImplService {
             mailService.sendMail(){
                 to  emailid
                 subject "Reset Password for LinkSharing"
-                html 'click <a href="http://localhost:8080/LinkSharing/newUser/resetPaswordChange/key='+key+'">Here</a>'
+                html 'click <a href="http://localhost:8080/LinkSharing/newUser/resetPaswordChange?key='+key+'">Here</a>'
 
 
             }
@@ -52,10 +52,26 @@ class NewUserImplService {
         }
         else
             render 'InValid EmailID'
-
-
-
     }
 
+
+
+    @Transactional(readOnly = false)
+    public Map passwordChange(Object params){
+        String emailid=''
+        boolean flag=false;
+        emailid   =    (ResetPassword.findByKey1(params?.key))?.emailid1
+        if(emailid!=null && emailid!=''){
+            NewUser newUser =   NewUser.findByEmailid(emailid)
+            newUser.password    =   params.password
+            println emailid
+            println newUser.password
+            println newUser.save(flush: true)
+            flag=true
+
+        }
+
+        [flag:flag]
+    }
 
 }

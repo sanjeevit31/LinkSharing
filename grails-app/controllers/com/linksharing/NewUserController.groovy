@@ -1,6 +1,6 @@
 package com.linksharing
 
-
+import javax.transaction.Transaction
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
@@ -114,13 +114,12 @@ class NewUserController {
 
     }
 
+
     def validateUser(){
         println 'from validate'
         String name= params['name']
         String pass=params['password']
         String keepMeLogin=params['keepMeLogin']
-
-
         NewUser newUser= NewUser.findByEmailidAndPassword(name,pass)
         println 'new User'+newUser
         if(newUser != null){
@@ -131,32 +130,18 @@ class NewUserController {
             Map map=newUserImplService.dashBord(newUser)
             println 'before render'
             render(view: 'dashBord',model: [msg:'You are SuccessFully logined.......',map:map])
-
-          /*  //render 'Welcome '+newUser.fname+' '+newUser.lname
-           // redirect(view: '/newUser/dashBord',model: [msg:' You are SuccessFully logined'])
-            //params.user=newUser
-            Map map=newUserImplService.dashBord(newUser)
-            println map
-
-           redirect(controller: 'newUser' ,action:'dashBord',mode )
-          //  params: [msg:'You are SuccessFully logined']
-           // dashBord()
-            render(view:[controller: 'newUser',action: 'dashBord'],model: [msg:' You are SuccessFully logined',map:map])*/
-        }
-
+         }
         else{
             session.removeAttribute('userid')
-            //flash.message='from flash invalid username or password'
-            // println flash.message
             session.invalidate()
             println 'validateUser else'
-
             render (view: 'login',model:[errorMessage:' invalid username or password'])
-
         }
     }
-    def demojquery(){
 
+
+
+    def demojquery(){
     }
 
 
@@ -164,19 +149,22 @@ class NewUserController {
         session.removeAttribute('userid')
         session.removeAttribute('user')
         session.invalidate()
-
         render(view: '/newUser/login',model: [errorMessage:' You are SuccessFully LogOut..'])
     }
 
-    def dashBord(NewUser newUser){
 
+
+
+    def dashBord(NewUser newUser){
         Map map=newUserImplService.dashBord(newUser)
         render(view: 'dashBord',model: [msg:'You are SuccessFully logined.......',map:map])
     }
 
-    def resetPasswordForm(){
 
+    def resetPasswordForm(){
     }
+
+
     @Transactional(readOnly = false)
     def resetPassword(){
         println 'from action resetPassword of NewUser'
@@ -185,16 +173,31 @@ class NewUserController {
 
     }
 
+
+
     def resetPaswordChange(){
         println 'from newUser action resetPaswordChange'
         println params
         boolean flag  =   (ResetPassword.findByKey1(params?.key))?true:false
+        println flag
         if(flag)
-            render view: 'resetPaswordChange'
+            render (view: 'resetPaswordChange',model: [key:params.key])
         else
             render 'invalid Link'
+    }
 
 
+
+
+    @Transactional(readOnly = false)
+    def passwordChange(){
+        println 'from newUser action passwordChange'
+        println params
+        Map map  =  newUserImplService.passwordChange(params)
+        if(map?.flag)
+            render 'password change successfully'
+        else
+            render 'wrong user'
 
     }
 

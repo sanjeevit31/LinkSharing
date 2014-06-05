@@ -3,7 +3,7 @@ package com.linksharing
 class ValidateusersFilters {
 
     def filters = {
-        all(controller:'newUser',action:'create|login|save|userCreatedMsg|validateUser', invert:true) {
+        all(controller:'newUser',action:'create|login|save|userCreatedMsg|validateUser|passwordChange|resetPasswordForm|passwordChange|resetPaswordChange|resetPassword|', invert:true) {
             before = {
                          def id=session.getAttribute('userid')
 
