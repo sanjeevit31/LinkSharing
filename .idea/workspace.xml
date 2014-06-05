@@ -83,10 +83,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NewUserImplService.groovy" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="NewUserImplService.groovy" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grails-app/services/com/linksharing/NewUserImplService.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="43" selection-start="1378" selection-end="1378" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="1230">
+            <state line="48" column="32" selection-start="1304" selection-end="1304" vertical-scroll-proportion="0.6881029" vertical-offset="262" max-vertical-offset="1305">
               <folding />
             </state>
           </provider>
@@ -106,10 +106,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NewUserController.groovy" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="NewUserController.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/linksharing/NewUserController.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="171" column="35" selection-start="4853" selection-end="4853" vertical-scroll-proportion="0.29692832" vertical-offset="2391" max-vertical-offset="3270">
+            <state line="182" column="35" selection-start="5047" selection-end="5047" vertical-scroll-proportion="-14.73913" vertical-offset="2391" max-vertical-offset="3270">
               <folding>
                 <element signature="e#25#61#0" expanded="true" />
               </folding>
@@ -221,8 +221,8 @@
         <option value="$PROJECT_DIR$/grails-app/conf/com/linksharing/ValidateusersFilters.groovy" />
         <option value="$PROJECT_DIR$/grails-app/views/newUser/resetPaswordChange.gsp" />
         <option value="$PROJECT_DIR$/grails-app/views/subscribed/show.gsp" />
-        <option value="$PROJECT_DIR$/grails-app/services/com/linksharing/NewUserImplService.groovy" />
         <option value="$PROJECT_DIR$/grails-app/controllers/com/linksharing/NewUserController.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/services/com/linksharing/NewUserImplService.groovy" />
       </list>
     </option>
   </component>
@@ -1388,12 +1388,12 @@
       <workItem from="1401772638193" duration="22021000" />
       <workItem from="1401856406568" duration="13984000" />
       <workItem from="1401888774577" duration="8439000" />
-      <workItem from="1401944186168" duration="16795000" />
+      <workItem from="1401944186168" duration="18310000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="478135000" />
+    <option name="totallyTimeSpent" value="479650000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -1827,19 +1827,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/services/com/linksharing/NewUserImplService.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="43" selection-start="1378" selection-end="1378" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="1230">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/linksharing/NewUserController.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="171" column="35" selection-start="4853" selection-end="4853" vertical-scroll-proportion="0.29692832" vertical-offset="2391" max-vertical-offset="3270">
+        <state line="182" column="35" selection-start="5047" selection-end="5047" vertical-scroll-proportion="-14.73913" vertical-offset="2391" max-vertical-offset="3270">
           <folding>
             <element signature="e#25#61#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/services/com/linksharing/NewUserImplService.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="32" selection-start="1304" selection-end="1304" vertical-scroll-proportion="0.6881029" vertical-offset="262" max-vertical-offset="1305">
+          <folding />
         </state>
       </provider>
     </entry>

@@ -30,11 +30,16 @@ class NewUserImplService {
 
      return map
  }
+    @Transactional(readOnly = false)
+    public Map resetPassword(Object params,StringBuffer requestUrl){
 
-    public Map resetPassword(Object params){
+        int len=requestUrl.lastIndexOf('/')
+        len=requestUrl.lastIndexOf('/',len-1)
+        len=requestUrl.lastIndexOf('/',len-1)
+        String applicationContext   =   requestUrl.substring(0,len)
 
         String emailid  =   params?.emailid
-        boolean maillSuccess=false
+        boolean maillSuccess    =   false
         boolean flag    =   (NewUser.findByEmailid(emailid))?true:false
         if(flag){
             String key   =  new Date().getTime().toString()
@@ -45,7 +50,7 @@ class NewUserImplService {
             mailService.sendMail(){
                 to  emailid
                 subject "Reset Password for LinkSharing"
-                html 'click <a href="http://localhost:8080/LinkSharing/newUser/resetPaswordChange?key='+key+'">Here</a>'
+                html 'click <a href="'+applicationContext+'/newUser/resetPaswordChange?key='+key+'">Here</a>'
 
                 maillSuccess=true
             }

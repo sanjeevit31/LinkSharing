@@ -169,8 +169,8 @@ class NewUserController {
     def resetPassword(){
         println 'from action resetPassword of NewUser'
         println 'params:'+params
-        println '>>>>>>>>>>>>>>>>>.'+request.getRequestURL()
-        Map map =  newUserImplService.resetPassword(params)
+
+        Map map =  newUserImplService.resetPassword(params,request.getRequestURL())
         if(map?.flag){
             return
         }
@@ -180,7 +180,7 @@ class NewUserController {
     }
 
 
-
+    @Transactional(readOnly = false)
     def resetPaswordChange(){
         println 'from newUser action resetPaswordChange'
         println params
