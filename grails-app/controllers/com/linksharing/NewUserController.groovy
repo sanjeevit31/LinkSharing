@@ -183,7 +183,20 @@ class NewUserController {
         println 'params:'+params
         Map map =  newUserImplService.resetPassword(params)
 
+    }
+
+    def resetPaswordChange(){
+        println 'from newUser action resetPaswordChange'
+        println params
+        boolean flag  =   (ResetPassword.findByKey1(params?.key))?true:false
+        if(flag)
+            render view: 'resetPaswordChange'
+        else
+            render 'invalid Link'
+
+
 
     }
+
 
 }

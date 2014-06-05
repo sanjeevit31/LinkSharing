@@ -32,22 +32,28 @@ class NewUserImplService {
  }
 
     public Map resetPassword(Object params){
-        println  'from resetPasswod method of NewUserImpl'
-        String emailid=params?.emailid
-        boolean flag=(NewUser.findByEmailid(emailid))?true:false
-        println emailid
-        String key = new Date().getTime().toString()
-        ResetPassword   resetPassword   =   new ResetPassword()
-        resetPassword.emailid1  =   emailid
-        resetPassword.key1  =   key
-        resetPassword.save()
-        println 'save successfully'
-        sendMail(){
-            to "sanjeev.jha@intelligrape.com"
-            subject "Password Reset"
-            body 'How are you?'
 
+        String emailid  =   params?.emailid
+        boolean flag    =   (NewUser.findByEmailid(emailid))?true:false
+        if(flag){
+            String key   =  new Date().getTime().toString()
+            ResetPassword   resetPassword   =   new ResetPassword()
+            resetPassword.emailid1  =   emailid
+            resetPassword.key1  =   key
+            resetPassword.save()
+            mailService.sendMail(){
+                to  emailid
+                subject "Reset Password for LinkSharing"
+                html 'click <a href="http://localhost:8080/LinkSharing/newUser/resetPaswordChange/key='+key+'">Here</a>'
+
+
+            }
+            return [:]
         }
+        else
+            render 'InValid EmailID'
+
+
 
     }
 
