@@ -13,11 +13,23 @@
 
 <body>
 <g:form controller="newUser" action="passwordChange">
-Enter New Password<g:passwordField name="password" id="password"/><br>
-Confirm Password<g:passwordField name="confirm" id="password"/><br>
-    <g:hiddenField name="key" value="${key}"/>
-    <g:hiddenField name="emailid" value="${emailid}"/>
-<g:submitButton name="submit" value="submit"></g:submitButton>
+    <table>
+        <tr>
+            <td>Enter New Password</td>
+            <td><g:passwordField name="password" id="password"/></td>
+        </tr>
+
+        <tr>
+            <td>Confirm Password</td>
+            <td><g:passwordField name="confirm" id="password"/></td>
+        </tr>
+        
+        <tr>
+            <td><g:hiddenField name="key" value="${key}"/><g:hiddenField name="emailid" value="${emailid}"/></td>
+            <td><g:submitButton name="submit" value="submit"></g:submitButton></td>
+        </tr>
+    </table>
+
 </g:form>
 </body>
 </html>

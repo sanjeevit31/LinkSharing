@@ -21,8 +21,20 @@
 
 <body>
 <g:form controller="newUser" action="resetPassword">
-    My LinkSharing Email Id:<g:textField name="emailid" required=""></g:textField>
-    <g:submitButton name="submit" value="Reset My Password"></g:submitButton>
+    <table>
+    <table>
+        <tr>
+                <td> My LinkSharing Email Id:</td>
+                <td><g:textField name="emailid" required=""></g:textField></td>
+        </tr>
+        <tr>
+                <td></td>
+                <td><g:submitButton name="submit" value="Reset My Password"></g:submitButton></td>
+        </tr>
+
+    </table>
+
+
 </g:form>
 </body>
 </html>

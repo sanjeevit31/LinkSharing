@@ -83,6 +83,15 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="resetPasswordForm.gsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/views/newUser/resetPasswordForm.gsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="30" column="7" selection-start="697" selection-end="697" vertical-scroll-proportion="-7.6595745" vertical-offset="90" max-vertical-offset="675">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="NewUserImplService.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/services/com/linksharing/NewUserImplService.groovy">
           <provider selected="true" editor-type-id="text-editor">
@@ -106,10 +115,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NewUserController.groovy" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="NewUserController.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/linksharing/NewUserController.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="193" column="77" selection-start="5508" selection-end="5508" vertical-scroll-proportion="0.3088737" vertical-offset="2714" max-vertical-offset="3345">
+            <state line="193" column="77" selection-start="5508" selection-end="5508" vertical-scroll-proportion="-7.869565" vertical-offset="2714" max-vertical-offset="3345">
               <folding>
                 <element signature="e#25#61#0" expanded="true" />
               </folding>
@@ -135,10 +144,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="resetPaswordChange.gsp" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="resetPaswordChange.gsp" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grails-app/views/newUser/resetPaswordChange.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="45" selection-start="232" selection-end="232" vertical-scroll-proportion="-4.4680853" vertical-offset="0" max-vertical-offset="420">
+            <state line="25" column="8" selection-start="533" selection-end="533" vertical-scroll-proportion="0.64737797" vertical-offset="17" max-vertical-offset="600">
               <folding />
             </state>
           </provider>
@@ -201,7 +210,6 @@
         <option value="$PROJECT_DIR$/grails-app/views/subscribed/index.gsp" />
         <option value="$PROJECT_DIR$/grails-app/views/newUser/login.gsp" />
         <option value="$PROJECT_DIR$/grails-app/views/newUser/create.gsp" />
-        <option value="$PROJECT_DIR$/grails-app/views/newUser/resetPasswordForm.gsp" />
         <option value="$PROJECT_DIR$/grails-app/views/newUser/resetPassword.gsp" />
         <option value="$PROJECT_DIR$/grails-app/domain/com/linksharing/ResetPassword.groovy" />
         <option value="$PROJECT_DIR$/grails-app/controllers/com/linksharing/ResourceController.groovy" />
@@ -220,9 +228,10 @@
         <option value="$PROJECT_DIR$/grails-app/conf/DataSource.groovy" />
         <option value="$PROJECT_DIR$/grails-app/conf/com/linksharing/ValidateusersFilters.groovy" />
         <option value="$PROJECT_DIR$/grails-app/views/subscribed/show.gsp" />
-        <option value="$PROJECT_DIR$/grails-app/views/newUser/resetPaswordChange.gsp" />
         <option value="$PROJECT_DIR$/grails-app/services/com/linksharing/NewUserImplService.groovy" />
         <option value="$PROJECT_DIR$/grails-app/controllers/com/linksharing/NewUserController.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/views/newUser/resetPasswordForm.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/views/newUser/resetPaswordChange.gsp" />
       </list>
     </option>
   </component>
@@ -1388,12 +1397,12 @@
       <workItem from="1401772638193" duration="22021000" />
       <workItem from="1401856406568" duration="13984000" />
       <workItem from="1401888774577" duration="8439000" />
-      <workItem from="1401944186168" duration="19342000" />
+      <workItem from="1401944186168" duration="20348000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="480682000" />
+    <option name="totallyTimeSpent" value="481688000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -1573,13 +1582,6 @@
       </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="26" selection-start="110" selection-end="110" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="225">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/newUser/resetPasswordForm.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="54" selection-start="542" selection-end="549" vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="495">
           <folding />
         </state>
       </provider>
@@ -1799,13 +1801,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/newUser/resetPassword.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="67" selection-start="502" selection-end="502" vertical-scroll-proportion="-6.7021275" vertical-offset="0" max-vertical-offset="495">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/subscribed/show.gsp">
       <provider selected="true" editor-type-id="text-editor">
         <state line="57" column="103" selection-start="2923" selection-end="3006" vertical-scroll-proportion="-4.787234" vertical-offset="630" max-vertical-offset="1170">
@@ -1820,13 +1815,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/newUser/resetPaswordChange.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="45" selection-start="232" selection-end="232" vertical-scroll-proportion="-4.4680853" vertical-offset="0" max-vertical-offset="420">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/services/com/linksharing/NewUserImplService.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state line="70" column="61" selection-start="1949" selection-end="1956" vertical-scroll-proportion="0.0" vertical-offset="548" max-vertical-offset="1305">
@@ -1836,10 +1824,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/linksharing/NewUserController.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="193" column="77" selection-start="5508" selection-end="5508" vertical-scroll-proportion="0.3088737" vertical-offset="2714" max-vertical-offset="3345">
+        <state line="193" column="77" selection-start="5508" selection-end="5508" vertical-scroll-proportion="-7.869565" vertical-offset="2714" max-vertical-offset="3345">
           <folding>
             <element signature="e#25#61#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/newUser/resetPassword.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="67" selection-start="502" selection-end="502" vertical-scroll-proportion="-6.7021275" vertical-offset="0" max-vertical-offset="495">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/newUser/resetPasswordForm.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="7" selection-start="697" selection-end="697" vertical-scroll-proportion="-7.6595745" vertical-offset="90" max-vertical-offset="675">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/newUser/resetPaswordChange.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="8" selection-start="533" selection-end="533" vertical-scroll-proportion="0.64737797" vertical-offset="17" max-vertical-offset="600">
+          <folding />
         </state>
       </provider>
     </entry>
