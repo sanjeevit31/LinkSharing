@@ -86,7 +86,7 @@
       <file leaf-file-name="NewUserImplService.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/services/com/linksharing/NewUserImplService.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="0" selection-start="1346" selection-end="1346" vertical-scroll-proportion="0.0" vertical-offset="598" max-vertical-offset="1215">
+            <state line="53" column="43" selection-start="1378" selection-end="1378" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="1230">
               <folding />
             </state>
           </provider>
@@ -109,7 +109,7 @@
       <file leaf-file-name="NewUserController.groovy" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/linksharing/NewUserController.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="118" column="31" selection-start="3228" selection-end="3228" vertical-scroll-proportion="0.122340426" vertical-offset="1701" max-vertical-offset="3165">
+            <state line="172" column="22" selection-start="4900" selection-end="4900" vertical-scroll-proportion="0.25531915" vertical-offset="2436" max-vertical-offset="3240">
               <folding>
                 <element signature="e#25#61#0" expanded="true" />
               </folding>
@@ -1331,12 +1331,12 @@
       <workItem from="1401772638193" duration="22021000" />
       <workItem from="1401856406568" duration="13984000" />
       <workItem from="1401888774577" duration="8439000" />
-      <workItem from="1401944186168" duration="12809000" />
+      <workItem from="1401944186168" duration="14788000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="474149000" />
+    <option name="totallyTimeSpent" value="476128000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -1730,13 +1730,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/newUser/resetPassword.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="67" selection-start="502" selection-end="502" vertical-scroll-proportion="-6.7021275" vertical-offset="0" max-vertical-offset="495">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/subscribed/show.gsp">
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="8" selection-start="1251" selection-end="1251" vertical-scroll-proportion="-8.297873" vertical-offset="0" max-vertical-offset="1170">
@@ -1772,14 +1765,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/services/com/linksharing/NewUserImplService.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="0" selection-start="1346" selection-end="1346" vertical-scroll-proportion="0.0" vertical-offset="598" max-vertical-offset="1215">
+        <state line="53" column="43" selection-start="1378" selection-end="1378" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="1230">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/newUser/resetPassword.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="67" selection-start="502" selection-end="502" vertical-scroll-proportion="-6.7021275" vertical-offset="0" max-vertical-offset="495">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/linksharing/NewUserController.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="118" column="31" selection-start="3228" selection-end="3228" vertical-scroll-proportion="0.122340426" vertical-offset="1701" max-vertical-offset="3165">
+        <state line="172" column="22" selection-start="4900" selection-end="4900" vertical-scroll-proportion="0.25531915" vertical-offset="2436" max-vertical-offset="3240">
           <folding>
             <element signature="e#25#61#0" expanded="true" />
           </folding>

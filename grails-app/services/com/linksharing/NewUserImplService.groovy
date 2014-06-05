@@ -34,6 +34,7 @@ class NewUserImplService {
     public Map resetPassword(Object params){
 
         String emailid  =   params?.emailid
+        boolean maillSuccess=false
         boolean flag    =   (NewUser.findByEmailid(emailid))?true:false
         if(flag){
             String key   =  new Date().getTime().toString()
@@ -46,12 +47,12 @@ class NewUserImplService {
                 subject "Reset Password for LinkSharing"
                 html 'click <a href="http://localhost:8080/LinkSharing/newUser/resetPaswordChange?key='+key+'">Here</a>'
 
-
+                maillSuccess=true
             }
-            return [:]
+
         }
-        else
-            render 'InValid EmailID'
+        println 'maillSuccess'+maillSuccess
+        [flag:maillSuccess]
     }
 
 

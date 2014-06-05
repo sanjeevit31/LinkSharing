@@ -170,6 +170,11 @@ class NewUserController {
         println 'from action resetPassword of NewUser'
         println 'params:'+params
         Map map =  newUserImplService.resetPassword(params)
+        if(map?.flag){
+            return
+        }
+        else
+            render 'Wrong EmailId'
 
     }
 
