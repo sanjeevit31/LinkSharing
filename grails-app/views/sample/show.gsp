@@ -1,3 +1,4 @@
+%{--
 
 <%@ page import="linksharing.Sample" %>
 <!DOCTYPE html>
@@ -42,3 +43,4 @@
 		</div>
 	</body>
 </html>
+--}%
