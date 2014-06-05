@@ -3,7 +3,7 @@ dataSource {
     driverClassName = "com.mysql.jdbc.Driver"
     dialect = org.hibernate.dialect.MySQL5InnoDBDialect
     username = "root"
-    password = "root"
+    password = "igdefault"
 //    loggingSql = "true"//it will show query
 }
 hibernate {
@@ -19,7 +19,7 @@ environments {
     development {
         dataSource {
             dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
-            url = "jdbc:mysql://localhost:3306/LinkSharing"
+            url = "jdbc:mysql://localhost:3306/sanjeevjha"
         }
     }
     test {
