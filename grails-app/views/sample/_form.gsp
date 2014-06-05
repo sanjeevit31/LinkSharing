@@ -1,6 +1,7 @@
-<%@ page import="linksharing.Sample" %>
+%{--<%@ page import="linksharing.Sample" %>--}%
 
 
+%{--
 
 <div class="fieldcontain ${hasErrors(bean: sampleInstance, field: 'name', 'error')} required">
 	<label for="name">
@@ -10,4 +11,5 @@
 	<g:textField name="name" required="" value="${sampleInstance?.name}"/>
 
 </div>
+--}%
 
