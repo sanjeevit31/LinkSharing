@@ -183,6 +183,7 @@ class NewUserController {
     def resetPaswordChange(){
         println 'from newUser action resetPaswordChange'
         println params
+        println request.getRequestURL()
         boolean flag  =   (ResetPassword.findByKey1(params?.key))?true:false
         println flag
         if(flag)

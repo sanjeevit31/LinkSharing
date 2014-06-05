@@ -55,7 +55,7 @@
 					<span id="topic-label" class="property-label"><g:message code="subscribed.topic.label" default="Topic" /></span>
 					
 						<span class="property-value" aria-labelledby="topic-label"><g:link controller="topic" action="show" params="topicid=${subscribedInstance.topic.id}" id="${subscribedInstance?.topic?.id}">${subscribedInstance?.topic?.encodeAsHTML()}</g:link></span>
-					
+					<g:link controller="newUser" action="resetPaswordChange" params="key=key"></g:link>
 				</li>
 				</g:if>
 			
