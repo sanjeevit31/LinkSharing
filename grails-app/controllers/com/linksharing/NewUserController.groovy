@@ -184,11 +184,16 @@ class NewUserController {
     def resetPaswordChange(){
         println 'from newUser action resetPaswordChange'
         println params
-
-        boolean flag  =   (ResetPassword.findByKey1(params?.key))?true:false
+        String emailid=''
+        ResetPassword resetPassword =   ResetPassword.findByKey1(params?.key)
+        boolean flag  =   resetPassword?true:false
         println flag
-        if(flag)
-            render (view: 'resetPaswordChange',model: [key:params.key])
+        if(flag){
+            emailid=resetPassword.emailid1
+            resetPassword.delete()
+            render (view: 'resetPaswordChange',model: [key:params.key,emailid:emailid])
+        }
+
         else
             render 'invalid Link'
     }

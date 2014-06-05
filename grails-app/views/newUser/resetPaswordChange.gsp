@@ -16,6 +16,7 @@
 Enter New Password<g:passwordField name="password" id="password"/><br>
 Confirm Password<g:passwordField name="confirm" id="password"/><br>
     <g:hiddenField name="key" value="${key}"/>
+    <g:hiddenField name="emailid" value="${emailid}"/>
 <g:submitButton name="submit" value="submit"></g:submitButton>
 </g:form>
 </body>

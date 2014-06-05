@@ -66,7 +66,7 @@ class NewUserImplService {
     public Map passwordChange(Object params){
         String emailid=''
         boolean flag=false;
-        emailid   =    (ResetPassword.findByKey1(params?.key))?.emailid1
+        emailid   =    params?.emailid
         if(emailid!=null && emailid!=''){
             NewUser newUser =   NewUser.findByEmailid(emailid)
             newUser.password    =   params.password
