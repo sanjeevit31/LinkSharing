@@ -169,6 +169,7 @@ class NewUserController {
     def resetPassword(){
         println 'from action resetPassword of NewUser'
         println 'params:'+params
+        println '>>>>>>>>>>>>>>>>>.'+request.getRequestURL()
         Map map =  newUserImplService.resetPassword(params)
         if(map?.flag){
             return
@@ -183,7 +184,7 @@ class NewUserController {
     def resetPaswordChange(){
         println 'from newUser action resetPaswordChange'
         println params
-        println request.getRequestURL()
+
         boolean flag  =   (ResetPassword.findByKey1(params?.key))?true:false
         println flag
         if(flag)

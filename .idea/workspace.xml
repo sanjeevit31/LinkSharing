@@ -109,7 +109,7 @@
       <file leaf-file-name="NewUserController.groovy" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/linksharing/NewUserController.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="185" column="39" selection-start="5137" selection-end="5137" vertical-scroll-proportion="0.5784983" vertical-offset="2436" max-vertical-offset="3255">
+            <state line="171" column="35" selection-start="4853" selection-end="4853" vertical-scroll-proportion="0.29692832" vertical-offset="2391" max-vertical-offset="3270">
               <folding>
                 <element signature="e#25#61#0" expanded="true" />
               </folding>
@@ -1388,12 +1388,12 @@
       <workItem from="1401772638193" duration="22021000" />
       <workItem from="1401856406568" duration="13984000" />
       <workItem from="1401888774577" duration="8439000" />
-      <workItem from="1401944186168" duration="16534000" />
+      <workItem from="1401944186168" duration="16795000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="477874000" />
+    <option name="totallyTimeSpent" value="478135000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -1836,7 +1836,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/linksharing/NewUserController.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="185" column="39" selection-start="5137" selection-end="5137" vertical-scroll-proportion="0.5784983" vertical-offset="2436" max-vertical-offset="3255">
+        <state line="171" column="35" selection-start="4853" selection-end="4853" vertical-scroll-proportion="0.29692832" vertical-offset="2391" max-vertical-offset="3270">
           <folding>
             <element signature="e#25#61#0" expanded="true" />
           </folding>
