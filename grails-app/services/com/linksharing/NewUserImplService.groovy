@@ -32,9 +32,10 @@ class NewUserImplService {
  }
     @Transactional(readOnly = false)
     public Map resetPassword(Object params,StringBuffer requestUrl){
-
+        String applicationContext=''
         if(requestUrl!=null)
-        String applicationContext   =    HelpUtil.getApplicationContext(requestUrl)
+        applicationContext  =    HelpUtil.getApplicationContext(requestUrl)
+        println 'applicationContext'+applicationContext
         String emailid  =   params?.emailid
         boolean maillSuccess    =   false
         boolean flag    =   (NewUser.findByEmailid(emailid))?true:false

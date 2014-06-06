@@ -4,7 +4,7 @@ dataSource {
     dialect = org.hibernate.dialect.MySQL5InnoDBDialect
     username = "root"
     password = "root"
-   loggingSql = "true"//it will show query
+//   loggingSql = "true"//it will show query
 }
 hibernate {
     cache.use_second_level_cache = true

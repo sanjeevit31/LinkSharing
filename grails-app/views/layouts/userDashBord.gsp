@@ -70,7 +70,7 @@
                 </li>
                 <li><g:link controller="subscribed" action="index">SUBSCRIBED TOPICS</g:link>
                     <ul>
-                        <li><a href="#">Web Design</a></li>
+                        <li><g:link controller="topicInvitation" action="invites">SEND INIVITATION</g:link></li>
                         <li><a href="#">User Experience</a></li>
                     </ul>
                 </li>
