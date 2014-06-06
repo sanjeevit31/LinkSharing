@@ -185,5 +185,7 @@ class ResourceController {
         println 'from download1'
         println 'params:'+params
         Map map = resourceImplService.download(params,response)
+
+        render 'SUCCESSFULLY DOWNLOADED.......'
     }
 }
