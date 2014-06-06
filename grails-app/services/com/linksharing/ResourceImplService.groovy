@@ -5,6 +5,7 @@ import org.apache.tomcat.jni.Procattr
 import org.codehaus.groovy.grails.web.servlet.mvc.GrailsParameterMap
 import org.springframework.web.multipart.commons.CommonsMultipartFile
 
+import javax.rmi.CORBA.Util
 import javax.servlet.ServletContext
 import javax.servlet.ServletOutputStream
 import javax.servlet.http.HttpServletRequest
@@ -53,7 +54,10 @@ class ResourceImplService {
 
   }
 
-    public  void resourceList(Object params,NewUser newser){
+    public  void resourceList(Object params,NewUser newser,StringBuffer requestUrl){
+
+        String applicationContext    = HelpUtil.getApplicationContext(requestUrl)
+        params.appContext   =   applicationContext;
         def topic =   Topic.load(params.topicid)
         println topic
         List resourceList =  Resource.findAllByTopic(topic)

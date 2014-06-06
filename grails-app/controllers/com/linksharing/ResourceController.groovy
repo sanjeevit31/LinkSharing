@@ -154,7 +154,7 @@ class ResourceController {
     def topicsResource(Integer max){
         println 'from topic Resource'
         println 'params:'+params
-       resourceImplService.resourceList(params,session.user)
+       resourceImplService.resourceList(params,session.user,request.getRequestURL())
     }
 
 

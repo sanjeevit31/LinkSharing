@@ -75,8 +75,8 @@ $(document).ready(function(){
                      /*$('#'+newId).hide()*/
                      $('#'+newId).text('')
                     var resourceId=($("#"+tdId).val())
-
-                 jQuery.ajax({type:'POST',data:{'resourceId':resourceId}, url:'/LinkSharing/resource/resourceReadStatus?user=${session.user}',
+                 alert('${params.appContext}')
+                 jQuery.ajax({type:'POST',data:{'resourceId':resourceId}, url:'${params.appContext}/resource/resourceReadStatus?user=${session.user}',
                  success:function(data,textStatus){/*alert('hello'+data)*/},
                  error:function(XMLHttpRequest,textStatus,errorThrown){}});return false;
       }
@@ -94,7 +94,7 @@ $(document).ready(function(){
         else  if($('#Link'+tdId).val()=='DownLoad'){
             alert('Download'+url)
 
-            window.open('http://localhost:8080/LinkSharing/resource/download?path='+url)
+            window.open('${params.appContext}/resource/download?path='+url)
 
 
         }

@@ -13,7 +13,7 @@
 
 <body>
 <g:form controller="newUser" action="passwordChange">
-    <table>
+    <table style="background: #CCCCCC)">
         <tr>
             <td>Enter New Password</td>
             <td><g:passwordField name="password" id="password"/></td>
@@ -23,7 +23,7 @@
             <td>Confirm Password</td>
             <td><g:passwordField name="confirm" id="password"/></td>
         </tr>
-        
+
         <tr>
             <td><g:hiddenField name="key" value="${key}"/><g:hiddenField name="emailid" value="${emailid}"/></td>
             <td><g:submitButton name="submit" value="submit"></g:submitButton></td>
