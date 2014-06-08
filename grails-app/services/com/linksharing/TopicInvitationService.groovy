@@ -4,7 +4,7 @@ import grails.transaction.Transactional
 
 @Transactional
 class TopicInvitationService {
-    def serviceMail
+    def mailService
 
     def serviceMethod() {
         println 'from TopicInvitationService '
@@ -51,7 +51,12 @@ class TopicInvitationService {
                topicInvitation.invitedTo    =   invitedTo
                topicInvitation.invitedBy    =   invitedBy
                topicInvitation.save()
-               
+               mailService.sendMail(){
+                   to  invitedTo.emailid;
+                   subject "${invitedBy.fname} wants to add you for Topic ${topic.name} "
+                   html 'To Subscribed Click <a href="/LinkSharing/newUser/resetPaswordChange?key=1">Here</a>';
+
+               }
 
            }
            else

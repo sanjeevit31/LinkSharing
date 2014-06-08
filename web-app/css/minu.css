@@ -10,7 +10,7 @@ padding-top: 5px;
 
 /*for menu bar*/
 nav {
-    margin: 50px auto;
+    margin: 10px auto;
     text-align: center;
 }
 
@@ -28,7 +28,7 @@ body, div, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, img, form, fieldse
 
 body {
     background: #909eab url('bg.png');
-    font-family: Helvetica, sans-serif; font-size: 18px; line-height: 14px;
+    font-family: Helvetica, sans-serif; font-size: 14px; line-height: 14px;
 }
 nav ul {
     background: #efefef;

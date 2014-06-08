@@ -21,7 +21,7 @@
 
 <body>
 <g:form controller="newUser" action="resetPassword">
-    <table>
+
     <table>
         <tr>
                 <td> My LinkSharing Email Id:</td>

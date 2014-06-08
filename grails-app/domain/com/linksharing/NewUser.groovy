@@ -1,5 +1,7 @@
 package com.linksharing
 
+import grails.transaction.Transactional
+
 class NewUser {
     String fname
     String lname
@@ -36,4 +38,25 @@ class NewUser {
         return emailid
     }
     static hasMany = [subscribed:Subscribed,resource:Resource]
+
+    public static Map changePassword2(Map map){
+        Map map1=[:]
+        int userId  =   map?.userId
+        String oldPassword=map?.oldPassword
+        String newPassword=map?.newPassword
+        String confirmPassword=map?.confirmPassword
+        NewUser newUser =   NewUser.findById(userId)
+
+        if((newUser?.password==oldPassword) && (newPassword==confirmPassword)){
+            println 'from if of changePassword2'
+            newUser.password=newPassword
+            if(newUser.save()) {
+                map1.status='success'
+            }
+        }
+        else
+            map1.status='fails'
+        return map1
+
+    }
 }

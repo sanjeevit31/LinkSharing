@@ -144,12 +144,6 @@
 				<fieldset class="${TopicDeleteEditFlag}">
 					<g:link class="edit" action="edit" resource="${topicInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
 					<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
-
-				</fieldset>
-                <fieldset class="buttons">
-
-                   %{-- <%params.name='sanjeev'
-                        %>--}%
                     <g:if test="${topicSubscribeFlag}">
 
                         <g:link controller="subscribed" action="create" params="[topicid:topicInstance.id]"><input type='button' name="Subscribe" value="Subscribe"/></g:link>
@@ -157,6 +151,19 @@
                     <g:else>
                         <g:link controller="resource" action="create" params="[topicid:topicInstance.id]">Add Resource</g:link>
                     </g:else>
+				</fieldset>
+                <fieldset class="buttons">
+
+                   <g:if test="${TopicDeleteEditFlag!='buttons'}">
+                       <g:if test="${topicSubscribeFlag}">
+
+                           <g:link controller="subscribed" action="create" params="[topicid:topicInstance.id]"><input type='button' name="Subscribe" value="Subscribe"/></g:link>
+                       </g:if>
+                       <g:else>
+                           <g:link controller="resource" action="create" params="[topicid:topicInstance.id]">Add Resource</g:link>
+                       </g:else>
+                   </g:if>
+
                 </fieldset>
 			</g:form>
 		</div>

@@ -40,7 +40,7 @@ ${params.remove(errMsg)}
 		<g:message code="subscribed.topic.label" default="Topic" />
 		<span class="required-indicator">*</span>
 	</label >
-    ${params.action}
+
 <%if(params.action.equals('edit'))
 {
     %>

@@ -127,13 +127,16 @@ class ResourceController {
             notFound()
             return
         }
-
+        Topic topic=resourceInstance.topic
         resourceInstance.delete flush:true
+        println 'resource Deleted'
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'Resource.label', default: 'Resource'), resourceInstance.id])
-                redirect action:"index", method:"GET"
+//                redirect action:"index", method:"GET"
+                redirect controller: 'topic',action: 'show',params:[topicInstance:topic]
+//                respond resourceInstance.topic
             }
             '*'{ render status: NO_CONTENT }
         }

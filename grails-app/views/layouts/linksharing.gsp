@@ -28,7 +28,10 @@
 
 <body onload="dateTime_()">
 <div id="header" >
-    <img src="${resource(dir:'images/linkimg',file:'lnkshr.gif')}" width="250px" height="90px">
+    <g:link controller="newUser" action="dashBord">
+        <img src="${resource(dir:'images/linkimg',file:'lnkshr.gif')}" width="250px" height="90px">
+    </g:link>
+
 </div>
 <div style="background: #abbf78;height: 70px;width: 110px; position: absolute;right:200px;top: 10px">
     <ls:date format="dd/MM/YYYY" value="${new Date()}"></ls:date>

@@ -10,7 +10,10 @@ class Topic {
 
     static belongsTo = [newUsers:NewUser]
     //static hasOne = [subscribers:Subscribed]
-   static hasMany = [subscribers:Subscribed,resource:Resource]
+   static hasMany = [
+           subscribers:Subscribed,
+           resource:Resource,
+           topicInvitation:TopicInvitation]
     static constraints = {
         name  blank :false,nullable: false,unique: true
         summery maxSize: 1024

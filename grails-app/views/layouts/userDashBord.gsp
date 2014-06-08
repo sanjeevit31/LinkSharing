@@ -28,7 +28,9 @@
 <body onload="dateTime_()">
 
     <div id="header" >
-         <img src="${resource(dir:'images/linkimg',file:'lnkshr.gif')}" width="250px" height="90px">
+        <g:link controller="newUser" action="dashBord">
+            <img src="${resource(dir:'images/linkimg',file:'lnkshr.gif')}" width="250px" height="90px">
+        </g:link>
     </div>
     <div style="background: #abbf78;height: 50px;width: 110px; position: absolute;right:200px;top: 10px">
          <ls:date format="dd/MM/YYYY" value="${new Date()}"></ls:date> </br></br>
@@ -55,6 +57,15 @@
         <nav>
             <ul>
                 <li><g:link controller="newUser" action="dashBord">HOME</g:link></li>
+                <g:if test="${session.user.emailid=='sanjeev.jha@intelligrape.com'}">
+                    <li><a href="#">USERS</a>
+                        <ul>
+                            <li><g:link controller="newUser" action="index">User List</g:link></li>
+
+                        </ul>
+                    </li>
+                </g:if>
+
                 <li><a href="#">TOPIC</a>
                     <ul>
                         <li><g:link controller="topic" action="create">NEW TOPIC</g:link></li>
@@ -76,7 +87,8 @@
                 </li>
                 <li><a href="#">WELCOME:${session.name}</a>
                     <ul>
-                        <li><a href="#">USER SETTING</a></li>
+                        <li><g:link controller="newUser" action="edit">Edit Profile</g:link></li>
+                        <li><g:link controller="newUser" action="changePassword1">change Password</g:link></li>
                         <li><g:link controller="newUser" action="logout">LOGOUT</g:link></li>
                     </ul>
                 </li>

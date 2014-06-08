@@ -12,4 +12,5 @@ class HelpUtil {
         String applicationContext   =   requestUrl.substring(0,len)
         return applicationContext
     }
+
 }

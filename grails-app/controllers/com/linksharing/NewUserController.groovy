@@ -45,7 +45,7 @@ class NewUserController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'newUser.label', default: 'NewUser'), newUserInstance.id])
-               // redirect newUserInstance
+
                 redirect([controller: "newUser",action: "userCreatedMsg"])
             }
             '*' { respond newUserInstance, [status: CREATED] }
@@ -53,6 +53,10 @@ class NewUserController {
     }
 
     def edit(NewUser newUserInstance) {
+        if(newUserInstance==null){
+            newUserInstance =   NewUser.findById(session.user.id)
+        }
+        println newUserInstance
         respond newUserInstance
     }
 
@@ -212,6 +216,22 @@ class NewUserController {
             render 'wrong user'
 
     }
+
+    def changePassword1(){
+
+    }
+
+    @Transactional(readOnly = false)
+    def changePassword2(){
+        Map map=[oldPassword:params.oldPassword,newPassword:params.newPassword,confirmPassword:params.confirmPassword,userId:session.user.id]
+       map= NewUser.changePassword2(map)
+        println map
+        render view:'changePassword2', model:['status':(map.status)]
+    }
+
+
+
+
 
 
 }

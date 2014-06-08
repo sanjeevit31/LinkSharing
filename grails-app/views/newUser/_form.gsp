@@ -28,6 +28,7 @@
 	<g:field type="email" name="emailid" required="" value="${newUserInstance?.emailid}"/>
 
 </div>
+<g:if test="${!(params.action=='edit')}">
 
 <div class="fieldcontain ${hasErrors(bean: newUserInstance, field: 'password', 'error')} required">
 	<label for="password">
@@ -47,7 +48,7 @@
     <g:passwordField name="confirmPassword" required=""/>
 
 </div>
-
+</g:if>
 <div class="fieldcontain ${hasErrors(bean: newUserInstance, field: 'mob', 'error')} required">
 	<label for="mob">
 		<g:message code="newUser.mob.label" default="Mobile No." />

@@ -30,12 +30,12 @@ class TopicController {
     }
 
     def show(Topic topicInstance) {
-       Map map=topicService.show(topicInstance,session.getAttribute('userid'))
-        String buttonVisibility='buttons'
-        boolean flag= session.getAttribute('user').id==topicInstance.newUsers.id
-        if(!flag){
-            buttonVisibility='buttonsHide'
+        if(topicInstance==null){
+            topicInstance   =   Topic.findByName(params.topicInstance)
         }
+            println params.topicInstance.getClass()
+       Map map=topicService.show(topicInstance,session.getAttribute('user'))
+
 
         respond topicInstance,model: map//[TopicDeleteEditFlag:buttonVisibility,flag:flag]
     }
@@ -105,7 +105,7 @@ class TopicController {
             notFound()
             return
         }
-
+        //topicService.deleteTopicResource(topicInstance)
         topicInstance.delete flush:true
 
         request.withFormat {
