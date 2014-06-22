@@ -99,19 +99,15 @@ class ResourceImplService {
         resourceReadUnreadStatus.save()
         }
 
-   public Map download(Object params,HttpServletResponse response){
-       println params
-       String path=params.path
-       def file = new File(path)
+   public Map download(String resourcePath,HttpServletResponse response){
+       def file = new File(resourcePath)
        if (file.exists()) {
            println 'from download2'
            response.setContentType("application/octet-stream") // or or image/JPEG or text/xml or whatever type the file is
            response.setHeader("Content-disposition", "attachment;filename=\"${file.name}\"")
            response.outputStream << file.bytes
-           [success:'success']
-    }
-
-
+           return [success:'success']
+          }
     }
 
     }

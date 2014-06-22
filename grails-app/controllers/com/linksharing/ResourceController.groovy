@@ -156,8 +156,7 @@ class ResourceController {
     def download() {
         println 'from download1'
         println 'params:' + params
-        Map map = resourceImplService.download(params, response)
-
+        Map map = resourceImplService.download(params.path, response)
         render 'SUCCESSFULLY DOWNLOADED.......'
     }
 
