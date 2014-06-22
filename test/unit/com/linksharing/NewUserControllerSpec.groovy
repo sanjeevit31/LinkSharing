@@ -5,9 +5,9 @@ package com.linksharing
 import grails.test.mixin.*
 import spock.lang.*
 
-@TestFor(NewUserController)
-@Mock(NewUser)
-class NewUserControllerSpec extends Specification {
+@TestFor(UserController)
+@Mock(User)
+class UserControllerSpec extends Specification {
 
     def populateValidParams(params) {
         assert params != null
@@ -21,8 +21,8 @@ class NewUserControllerSpec extends Specification {
             controller.index()
 
         then:"The model is correct"
-            !model.newUserInstanceList
-            model.newUserInstanceCount == 0
+            !model.userInstanceList
+            model.userInstanceCount == 0
     }
 
     void "Test the create action returns the correct model"() {
@@ -30,32 +30,32 @@ class NewUserControllerSpec extends Specification {
             controller.create()
 
         then:"The model is correctly created"
-            model.newUserInstance!= null
+            model.userInstance!= null
     }
 
     void "Test the save action correctly persists an instance"() {
 
         when:"The save action is executed with an invalid instance"
             request.contentType = FORM_CONTENT_TYPE
-            def newUser = new NewUser()
-            newUser.validate()
-            controller.save(newUser)
+            def user = new User()
+            user.validate()
+            controller.save(user)
 
         then:"The create view is rendered again with the correct model"
-            model.newUserInstance!= null
+            model.userInstance!= null
             view == 'create'
 
         when:"The save action is executed with a valid instance"
             response.reset()
             populateValidParams(params)
-            newUser = new NewUser(params)
+            user = new User(params)
 
-            controller.save(newUser)
+            controller.save(user)
 
         then:"A redirect is issued to the show action"
-            response.redirectedUrl == '/newUser/show/1'
+            response.redirectedUrl == '/user/show/1'
             controller.flash.message != null
-            NewUser.count() == 1
+            User.count() == 1
     }
 
     void "Test that the show action returns the correct model"() {
@@ -67,11 +67,11 @@ class NewUserControllerSpec extends Specification {
 
         when:"A domain instance is passed to the show action"
             populateValidParams(params)
-            def newUser = new NewUser(params)
-            controller.show(newUser)
+            def user = new User(params)
+            controller.show(user)
 
         then:"A model is populated containing the domain instance"
-            model.newUserInstance == newUser
+            model.userInstance == user
     }
 
     void "Test that the edit action returns the correct model"() {
@@ -83,11 +83,11 @@ class NewUserControllerSpec extends Specification {
 
         when:"A domain instance is passed to the edit action"
             populateValidParams(params)
-            def newUser = new NewUser(params)
-            controller.edit(newUser)
+            def user = new User(params)
+            controller.edit(user)
 
         then:"A model is populated containing the domain instance"
-            model.newUserInstance == newUser
+            model.userInstance == user
     }
 
     void "Test the update action performs an update on a valid domain instance"() {
@@ -96,28 +96,28 @@ class NewUserControllerSpec extends Specification {
             controller.update(null)
 
         then:"A 404 error is returned"
-            response.redirectedUrl == '/newUser/index'
+            response.redirectedUrl == '/user/index'
             flash.message != null
 
 
         when:"An invalid domain instance is passed to the update action"
             response.reset()
-            def newUser = new NewUser()
-            newUser.validate()
-            controller.update(newUser)
+            def user = new User()
+            user.validate()
+            controller.update(user)
 
         then:"The edit view is rendered again with the invalid instance"
             view == 'edit'
-            model.newUserInstance == newUser
+            model.userInstance == user
 
         when:"A valid domain instance is passed to the update action"
             response.reset()
             populateValidParams(params)
-            newUser = new NewUser(params).save(flush: true)
-            controller.update(newUser)
+            user = new User(params).save(flush: true)
+            controller.update(user)
 
         then:"A redirect is issues to the show action"
-            response.redirectedUrl == "/newUser/show/$newUser.id"
+            response.redirectedUrl == "/user/show/$user.id"
             flash.message != null
     }
 
@@ -127,23 +127,23 @@ class NewUserControllerSpec extends Specification {
             controller.delete(null)
 
         then:"A 404 is returned"
-            response.redirectedUrl == '/newUser/index'
+            response.redirectedUrl == '/user/index'
             flash.message != null
 
         when:"A domain instance is created"
             response.reset()
             populateValidParams(params)
-            def newUser = new NewUser(params).save(flush: true)
+            def user = new User(params).save(flush: true)
 
         then:"It exists"
-            NewUser.count() == 1
+            User.count() == 1
 
         when:"The domain instance is passed to the delete action"
-            controller.delete(newUser)
+            controller.delete(user)
 
         then:"The instance is deleted"
-            NewUser.count() == 0
-            response.redirectedUrl == '/newUser/index'
+            User.count() == 0
+            response.redirectedUrl == '/user/index'
             flash.message != null
     }
 }

@@ -1,13 +1,10 @@
 package com.linksharing
 
 import grails.transaction.Transactional
-import org.apache.tomcat.jni.Procattr
 import org.codehaus.groovy.grails.web.servlet.mvc.GrailsParameterMap
 import org.springframework.web.multipart.commons.CommonsMultipartFile
 
-import javax.rmi.CORBA.Util
 import javax.servlet.ServletContext
-import javax.servlet.ServletOutputStream
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 import java.text.SimpleDateFormat
@@ -54,7 +51,7 @@ class ResourceImplService {
 
   }
 
-    public  void resourceList(Object params,NewUser newser,StringBuffer requestUrl){
+    public  void resourceList(Object params,User newser,StringBuffer requestUrl){
 
         String applicationContext    = HelpUtil.getApplicationContext(requestUrl)
         params.appContext   =   applicationContext;
@@ -64,7 +61,7 @@ class ResourceImplService {
         def readStatusList=ResourceReadUnreadStatus.createCriteria().list {
                       inList('resource',resourceList)
                      and{
-                            eq('users',newser)
+                            eq('user',user)
                       }
               }
         println readStatusList.size()+'..................................................................'
@@ -86,11 +83,11 @@ class ResourceImplService {
     }
 
    public void readWriteEntryForResource1(Resource resourceInstance){
-       List newUser=NewUser.list()
+       List user=User.list()
        println resourceInstance
-       newUser.each {
+       user.each {
            ResourceReadUnreadStatus resourceReadUnreadStatus=new ResourceReadUnreadStatus()
-           resourceReadUnreadStatus.users=it
+           resourceReadUnreadStatus.user=it
            resourceReadUnreadStatus.resource=resourceInstance
            resourceReadUnreadStatus.status='N'
            try{
@@ -108,7 +105,7 @@ class ResourceImplService {
 
     public void readWriteEntryForResource(Object params){
         ResourceReadUnreadStatus resourceReadUnreadStatus=  new ResourceReadUnreadStatus()
-        resourceReadUnreadStatus.users=NewUser.findByEmailid(params.user)
+        resourceReadUnreadStatus.user=User.get(params.userId)
         resourceReadUnreadStatus.resource=Resource.findById(params.resourceId)
         resourceReadUnreadStatus.readDate=new Date()
         resourceReadUnreadStatus.status='Yes'

@@ -1,23 +1,24 @@
 package com.linksharing
 
-
+import org.springframework.security.access.annotation.Secured
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
+@Secured(['ROLE_ADMIN', 'ROLE_USER'])
 @Transactional(readOnly = true)
 class SubscribedController {
+
     SubscribedImp subscribedImp
+    def springSecurityService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
-        println 'from index subscribed'
         params.max = Math.min(max ?: 10, 100)
-        List subscribed=Subscribed.findAllByNewUsers(session.getAttribute('user'),params)
-        respond subscribed,model: [subscribedInstanceCount:subscribed.size()]
-       // respond topic, model:[topicInstanceCount: Topic.count(),topic:topic]
-        //respond Subscribed.list(params), model:[subscribedInstanceCount: Subscribed.count()]
+        List subscribed = Subscribed.findAllByUser(session.getAttribute('user'), params)
+        respond subscribed, model: [subscribedInstanceCount: subscribed.size()]
+
     }
 
     def show(Subscribed subscribedInstance) {
@@ -25,7 +26,17 @@ class SubscribedController {
     }
 
     def create() {
-        respond new Subscribed(params)
+        Topic topicInstance
+        User user = springSecurityService.getCurrentUser()
+        int topicId = Integer.parseInt(params.topicId)
+
+        if(topicId)
+            topicInstance= Topic.findById(topicId)
+
+        if (user && topicInstance)
+            respond new Subscribed(params), model: [user: user, topicInstance: topicInstance]
+        else
+            render 'some error occur'
     }
 
     @Transactional
@@ -37,22 +48,18 @@ class SubscribedController {
         }
 
         if (subscribedInstance.hasErrors()) {
-            respond subscribedInstance.errors, view:'create',[status: CREATED]
+            respond subscribedInstance.errors, view: 'create', [status: CREATED]
             return
         }
 
-       boolean flag=subscribedImp.subscriptionuniquness(subscribedInstance);
+        boolean flag =  isUserSubscribed(subscribedInstance);
         println flag
-        if(flag){
-
-             redirect(controller:'subscribed',action: 'create',params: [errMsg: "You Can't Subscribe a Topic Again",topicid:subscribedInstance.topic.id])
-            //render(view:'/subscribed/create')
-           // respond subscribedInstance.errors, view:'create'
+        if (flag) {
+            redirect(controller: 'subscribed', action: 'create', params: [errMsg: "You Can't Subscribe a Topic Again", topicId: subscribedInstance.topic.id])
             return
 
-        }
-                else
-            subscribedInstance.save flush:true
+        } else
+            subscribedInstance.save flush: true
 
 
         request.withFormat {
@@ -76,18 +83,18 @@ class SubscribedController {
         }
 
         if (subscribedInstance.hasErrors()) {
-            respond subscribedInstance.errors, view:'edit'
+            respond subscribedInstance.errors, view: 'edit'
             return
         }
 
-        subscribedInstance.save flush:true
+        subscribedInstance.save flush: true
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.updated.message', args: [message(code: 'Subscribed.label', default: 'Subscribed'), subscribedInstance.id])
                 redirect subscribedInstance
             }
-            '*'{ respond subscribedInstance, [status: OK] }
+            '*' { respond subscribedInstance, [status: OK] }
         }
     }
 
@@ -99,14 +106,14 @@ class SubscribedController {
             return
         }
 
-        subscribedInstance.delete flush:true
+        subscribedInstance.delete flush: true
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'Subscribed.label', default: 'Subscribed'), subscribedInstance.id])
-                redirect action:"index", method:"GET"
+                redirect action: "index", method: "GET"
             }
-            '*'{ render status: NO_CONTENT }
+            '*' { render status: NO_CONTENT }
         }
     }
 
@@ -116,7 +123,12 @@ class SubscribedController {
                 flash.message = message(code: 'default.not.found.message', args: [message(code: 'subscribed.label', default: 'Subscribed'), params.id])
                 redirect action: "index", method: "GET"
             }
-            '*'{ render status: NOT_FOUND }
+            '*' { render status: NOT_FOUND }
         }
+    }
+
+    public  boolean isUserSubscribed(Subscribed subscribed){
+        return Subscribed.countByUserAndTopic(subscribed.user,subscribed.topic)>0
+
     }
 }

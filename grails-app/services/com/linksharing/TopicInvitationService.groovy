@@ -13,15 +13,15 @@ class TopicInvitationService {
 
 
 
-   public void invites(Object params,NewUser newUser){
+   public void invites(Object params,User user){
        println 'from TopicInvitationService invites '
        println 'params'+params
-       println 'newUser'+newUser.id
+       println 'user'+user.id
        List topicList   =   ['Select Topic']
-       List<Subscribed> subscribedlist    =   Subscribed.findAllByNewUsers(newUser)
-       List<NewUser> userList   =   NewUser.findAll()
-       println 'index of:'+userList.indexOf(newUser)
-       println newUser
+       List<Subscribed> subscribedlist    =   Subscribed.findAllByUsers(user)
+       List<User> userList   =   User.findAll()
+       println 'index of:'+userList.indexOf(user)
+       println user
        println userList
 
        subscribedlist.each {it->
@@ -41,8 +41,8 @@ class TopicInvitationService {
        Topic topic  =   Topic.findByName(topicName)
 
        try{
-           NewUser invitedTo  =   NewUser.findByEmailid(params.invitedTo)
-           NewUser invitedBy    =   NewUser.findByEmailid(params.invitedBy)
+           User invitedTo  =   User.findByEmailid(params.invitedTo)
+           User invitedBy    =   User.findByEmailid(params.invitedBy)
            TopicInvitation  topicInvitation =   new TopicInvitation()
 
            if(topic!=null && invitedTo!=null && invitedBy!=null)
@@ -52,9 +52,9 @@ class TopicInvitationService {
                topicInvitation.invitedBy    =   invitedBy
                topicInvitation.save()
                mailService.sendMail(){
-                   to  invitedTo.emailid;
+                   to  invitedTo.emailId;
                    subject "${invitedBy.fname} wants to add you for Topic ${topic.name} "
-                   html 'To Subscribed Click <a href="/LinkSharing/newUser/resetPaswordChange?key=1">Here</a>';
+                   html 'To Subscribed Click <a href="/LinkSharing/user/resetPaswordChange?forgetKey=1">Here</a>';
 
                }
 
@@ -85,17 +85,17 @@ class TopicInvitationService {
       if(subscribedListOfTopic!=null){
           subscribedUserIdList =   new ArrayList()
           subscribedListOfTopic.each {it->
-              subscribedUserIdList.add(it.newUsers.id)
+              subscribedUserIdList.add(it.users.id)
           }
           println subscribedUserIdList
 
-          userList=NewUser.createCriteria().list{
+          userList=User.createCriteria().list{
               not {
                   'in'("id",subscribedUserIdList)
               }
           }
           println userList.size()
-          println NewUser.list().size()
+          println User.list().size()
       }
 
 

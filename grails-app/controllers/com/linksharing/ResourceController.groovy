@@ -1,21 +1,21 @@
 package com.linksharing
 
-import org.springframework.web.multipart.commons.CommonsMultipartFile
-
-import javax.servlet.ServletContext
+import org.springframework.security.access.annotation.Secured
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
+
 //
 //@Transactional(readOnly = true)
+@Secured(['ROLE_ADMIN', 'ROLE_USER'])
 class ResourceController {
-
+    def springSecurityService
     ResourceImplService resourceImplService;
     static allowedMethods = [save: "POST", update: "POST", delete: "DELETE"]
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond Resource.list(params), model:[resourceInstanceCount: Resource.count()]
+        respond Resource.list(params), model: [resourceInstanceCount: Resource.count()]
     }
 
     def show(Resource resourceInstance) {
@@ -23,32 +23,25 @@ class ResourceController {
     }
 
     def create() {
-        Map map=[:]
-                                    println 'from create of resource controller'+params
-        params.userid=session.userid
-                                     println 'from create of resource controller'+params
-//        if(resourceServiceImpl1!=null){
-//        map=resourceServiceImpl.getUserAndTopic(params)
-//                                      println 'from create of resource controller map'+map
-//        }
-//       String topicName= Topic.findById(params.topicid).name
-//        println 'topic name'+topicName
-//        params.topicName=topicName
-//        println params
-        respond new Resource(params)
+        User user = springSecurityService.getCurrentUser()
+        Map map = [:]
+        println 'from create of resource controller' + params
+        params.userid = session.userid
+        println 'from create of resource controller' + params
+
+        respond new Resource(params),model: [user:user]
     }
 
     @Transactional
     def save(Resource resourceInstance) {
-        println 'from save'+params
-        String type=params.type
+        println 'from save' + params
+        String type = params.type
 
-        if(type!=null && !type.equals(''))
-        {
-            if(type.equals('Document')){
-                resourceImplService.upload(servletContext,request,type,params)
+        if (type != null && !type.equals('')) {
+            if (type.equals('Document')) {
+                resourceImplService.upload(servletContext, request, type, params)
 
-                resourceInstance.properties=params;
+                resourceInstance.properties = params;
 
             }
 
@@ -60,15 +53,12 @@ class ResourceController {
         }
 
         if (resourceInstance.hasErrors()) {
-            respond resourceInstance.errors, view:'create'
+            respond resourceInstance.errors, view: 'create'
             return
         }
 
-        //sanjeev
-
-
-        resourceInstance.save flush:true
-      //  resourceImplService.readWriteEntryForResource(resourceInstance)
+        resourceInstance.save flush: true
+        //  resourceImplService.readWriteEntryForResource(resourceInstance)
 
         request.withFormat {
             form multipartForm {
@@ -86,37 +76,25 @@ class ResourceController {
     @Transactional
     def update(Resource resourceInstance) {
         println 'from resource update'
-        println 'params:'+params
+        println 'params:' + params
         if (resourceInstance == null) {
             notFound()
             return
         }
 
         if (resourceInstance.hasErrors()) {
-            respond resourceInstance.errors, view:'edit'
+            respond resourceInstance.errors, view: 'edit'
             return
         }
-//        String type=params.type
-//
-//        if(type!=null && !type.equals(''))
-//        {
-//            if(type.equals('Document')){
-//                resourceImplService.upload(servletContext,request,type,params)
-//
-//                resourceInstance.properties=params;
-//                println 'from resource update after properties chnge'
-//
-//            }
-//
-//        }
-        resourceInstance.save flush:true
+
+        resourceInstance.save flush: true
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.updated.message', args: [message(code: 'Resource.label', default: 'Resource'), resourceInstance.id])
                 redirect resourceInstance
             }
-            '*'{ respond resourceInstance, [status: OK] }
+            '*' { respond resourceInstance, [status: OK] }
         }
     }
 
@@ -127,18 +105,18 @@ class ResourceController {
             notFound()
             return
         }
-        Topic topic=resourceInstance.topic
-        resourceInstance.delete flush:true
+        Topic topic = resourceInstance.topic
+        resourceInstance.delete flush: true
         println 'resource Deleted'
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'Resource.label', default: 'Resource'), resourceInstance.id])
 //                redirect action:"index", method:"GET"
-                redirect controller: 'topic',action: 'show',params:[topicInstance:topic]
+                redirect controller: 'topic', action: 'show', params: [topicInstance: topic]
 //                respond resourceInstance.topic
             }
-            '*'{ render status: NO_CONTENT }
+            '*' { render status: NO_CONTENT }
         }
     }
 
@@ -148,47 +126,46 @@ class ResourceController {
                 flash.message = message(code: 'default.not.found.message', args: [message(code: 'resource.label', default: 'Resource'), params.id])
                 redirect action: "index", method: "GET"
             }
-            '*'{ render status: NOT_FOUND }
+            '*' { render status: NOT_FOUND }
         }
     }
 
 
-
-    def topicsResource(Integer max){
+    def topicsResource(Integer max) {
         println 'from topic Resource'
-        println 'params:'+params
-       resourceImplService.resourceList(params,session.user,request.getRequestURL())
+        println 'params:' + params
+        resourceImplService.resourceList(params, session.user, request.getRequestURL())
     }
 
 
-
-    def resourceReadStatus(){
+    def resourceReadStatus() {
         println 'from resourceReadStatus'
-        println 'params:'+params
+        println 'params:' + params
         resourceImplService.readWriteEntryForResource(params)
         render 'success'
     }
 
 
-
-    def mail(){
-           sendMail {
-             to "sanjeev.jha@intelligrape.com"
-             subject "Hello Fred"
-             body 'How are you?'
-         }
+    def mail() {
+        sendMail {
+            to "sanjeev.jha@intelligrape.com"
+            subject "Hello Fred"
+            body 'How are you?'
+        }
         println "mail sent.."
         render 'success'
     }
 
 
-
-
     def download() {
         println 'from download1'
-        println 'params:'+params
-        Map map = resourceImplService.download(params,response)
+        println 'params:' + params
+        Map map = resourceImplService.download(params, response)
 
         render 'SUCCESSFULLY DOWNLOADED.......'
+    }
+
+    def demo(){
+
     }
 }

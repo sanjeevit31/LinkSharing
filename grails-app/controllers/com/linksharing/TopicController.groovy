@@ -1,47 +1,39 @@
 package com.linksharing
 
-
+import org.springframework.security.access.annotation.Secured
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
+@Secured(['ROLE_ADMIN', 'ROLE_USER'])
 @Transactional(readOnly = true)
 class TopicController {
     TopicService topicService
+    def springSecurityService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
-
-        params.max = Math.min(max ?: 10, 100)
-
         println params
-       //List topic=Topic.list(params)
-       List topic=Topic.findAllByVisibilityOrNewUsers('public',session.getAttribute('user'),params)
-       // Topic.findAllWhere([id: session.getAttribute('user').id])
-       // println 'topic'+topic
+        params.max = Math.min(max ?: 10, 100)
+        User user = springSecurityService.getCurrentUser()
+        List<Topic> topics = Topic.findAllByVisibilityOrUser('public', session.getAttribute('user'), params)
 
-       // int size=topic.size();
-        //int size1=Topic.count()
-        //println topic+':'+size+':'+size1
-        //respond topic,model:[topicInstanceCount:size,topicList:topic]
-       respond topic, model:[topicInstanceCount: Topic.count(),topic:topic]
-       // render(view: 'index', model:[topic:topic,topicInstanceCount:topic.size()] )
+        respond topics, model: [topicInstanceCount: Topic.count(), topic: topics,user:user]
+
     }
 
+    @Secured(['ROLE_ADMIN', 'ROLE_USER'])
     def show(Topic topicInstance) {
-        if(topicInstance==null){
-            topicInstance   =   Topic.findByName(params.topicInstance)
-        }
-            println params.topicInstance.getClass()
-       Map map=topicService.show(topicInstance,session.getAttribute('user'))
-
-
-        respond topicInstance,model: map//[TopicDeleteEditFlag:buttonVisibility,flag:flag]
+        println params
+        println 'from show of Topic Controller'
+        Map map = topicService.show(topicInstance)
+        respond topicInstance, model: map
     }
 
     def create() {
-        respond new Topic(params)
+        User user = springSecurityService.getCurrentUser()
+        respond new Topic(params),model: [user:user]
     }
 
     @Transactional
@@ -52,26 +44,29 @@ class TopicController {
         }
 
         if (topicInstance.hasErrors()) {
-            respond topicInstance.errors, view:'create'
+            respond topicInstance.errors, view: 'create'
             return
         }
-        params.interestLevel='active'
-        params.createdDate=new Date()
+        params.interestLevel = 'active'
+        params.createdDate = new Date()
         topicInstance.addToSubscribers(new Subscribed(params))
+
         println topicInstance.validate()
         println topicInstance.errors.allErrors
-        topicInstance.save flush:true
+        topicInstance.save flush: true
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'topic.label', default: 'Topic'), topicInstance.id])
-               redirect topicInstance
+                redirect topicInstance
             }
             '*' { respond topicInstance, [status: CREATED] }
         }
     }
 
     def edit(Topic topicInstance) {
+        User user=springSecurityService.getCurrentUser()
+        params.userId=user?.id
         respond topicInstance
     }
 
@@ -83,18 +78,18 @@ class TopicController {
         }
 
         if (topicInstance.hasErrors()) {
-            respond topicInstance.errors, view:'edit'
+            respond topicInstance.errors, view: 'edit'
             return
         }
 
-        topicInstance.save flush:true
+        topicInstance.save flush: true
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.updated.message', args: [message(code: 'Topic.label', default: 'Topic'), topicInstance.id])
                 redirect topicInstance
             }
-            '*'{ respond topicInstance, [status: OK] }
+            '*' { respond topicInstance, [status: OK] }
         }
     }
 
@@ -106,14 +101,14 @@ class TopicController {
             return
         }
         //topicService.deleteTopicResource(topicInstance)
-        topicInstance.delete flush:true
+        topicInstance.delete flush: true
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'Topic.label', default: 'Topic'), topicInstance.id])
-                redirect action:"index", method:"GET"
+                redirect action: "index", method: "GET"
             }
-            '*'{ render status: NO_CONTENT }
+            '*' { render status: NO_CONTENT }
         }
     }
 
@@ -123,7 +118,48 @@ class TopicController {
                 flash.message = message(code: 'default.not.found.message', args: [message(code: 'topic.label', default: 'Topic'), params.id])
                 redirect action: "index", method: "GET"
             }
-            '*'{ render status: NOT_FOUND }
+            '*' { render status: NOT_FOUND }
         }
+    }
+
+    public getAuthorsHotTopics() {
+
+        List topics = Topic.getAuthorsHotTopics(params.id)
+    }
+
+    def userRecentTopics() {
+        println 'from userRecentTopics'
+        println params
+        List<Topic> userRecentTopic
+        User user = User.get(params.userId)
+        println user
+        if (user) {
+            userRecentTopic = Topic.findAllByUser(user, [max:3, sort: "dateCreated"])
+            render(view: 'userRecentTopics', model: [userRecentTopic: userRecentTopic])
+        } else {
+            render 'Some Error Occur'
+        }
+
+    }
+
+    def topicDetails(){
+        User user=springSecurityService.getCurrentUser()
+        Topic topicInstance = Topic.get(params.id)
+       if(topicInstance)
+        render view: 'topicDetails',model: [topicTitle:topicInstance.name,topicCreatedDate:topicInstance.dateCreated,topicSummery:topicInstance.summery,user:user]
+       return;
+    }
+
+    def topicSearch(){
+       User user=springSecurityService.getCurrentUser()
+        Integer offset = 0
+        if(params.offset)
+            offset = Integer.parseInt(params.offset)
+        println 'from TopicCon topicSearch1111111...'+params.searchKey
+        List<Topic> topics = Topic.topicSearch(params.searchKey,offset)
+        println params.searchKey
+        println '<<<<<<<<<'
+        println user
+        render(view: 'topicSearch',model: [topics:topics,searchKey:params.searchKey,user:user])
     }
 }

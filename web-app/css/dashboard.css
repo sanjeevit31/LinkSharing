@@ -1,0 +1,16 @@
+.plus{
+    background: #8d8d8d;
+    width:15px;color: #ffffff;
+    float: right;
+    margin-top: 2px;
+    margin-right: 10px;
+    text-align: center
+}
+.topics{
+    border:thin solid #dcdcdc;
+    padding-top: 10px;
+    margin: 4px;
+    padding-left: 10px;
+    height: 25px
+}
+

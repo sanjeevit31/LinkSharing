@@ -1,0 +1,12 @@
+.lnkshrMsg{
+    font-size:40px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif,
+}
+.loginContent{
+    width:300px;
+    /*height: 30px;*/
+    border: ridge rgba(215, 215, 215, 0.73);
+    margin-top: 20px;
+    padding: 20px;
+    box-shadow:2px 2px 3px 3px #427c97
+}

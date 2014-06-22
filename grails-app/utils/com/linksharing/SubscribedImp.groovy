@@ -4,13 +4,8 @@ package com.linksharing
  * Created by sanjeev on 20/5/14.
  */
 class SubscribedImp {
-    public static boolean subscriptionuniquness(Subscribed subscribed){
+    public static boolean isUserSubscribed(Subscribed subscribed){
+        return Subscribed.countByUserAndTopic(subscribed.user,subscribed.topic)>0
 
-        println 'from subscriptionuniquness'
-        def flag= Subscribed.findByNewUsersAndTopic(subscribed.newUsers,subscribed.topic)
-        if(flag!=null)
-        return true
-        else
-        return false
     }
 }

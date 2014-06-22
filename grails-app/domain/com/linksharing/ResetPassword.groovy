@@ -1,9 +1,10 @@
 package com.linksharing
 
 class ResetPassword {
-    String emailid1
-    String key1
+    String emailId
+    String forgetKey
 
     static constraints = {
     }
+
 }

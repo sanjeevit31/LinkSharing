@@ -6,8 +6,11 @@ class UrlMappings {
                 // apply constraints here
             }
         }
+        "/"(controller: 'user', action: 'dashBoard')
 
-        "/"(view:"/index")
+       // "/logout/$action?"(controller: "logout")
+
+       // "/"(view:"/index")
         "500"(view:'/error')
 	}
 }

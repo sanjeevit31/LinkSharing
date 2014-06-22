@@ -155,3 +155,25 @@ grails {
                 "mail.smtp.socketFactory.fallback":"false"]
     }
 }
+
+
+// Added by the Spring Security Core plugin:
+grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.linksharing.User'
+grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.linksharing.UserRole'
+grails.plugin.springsecurity.authority.className = 'com.linksharing.Role'
+
+grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/user/dashBoard'//me
+grails.plugin.springsecurity.auth.loginFormUrl = '/login/auth'
+grails.plugin.springsecurity.logout.afterLogoutUrl = '/user/dashBoard'
+//grails.plugin.springsecurity.logout.filterProcessesUrl = '/user/dashBoard'
+
+grails.plugin.springsecurity.controllerAnnotations.staticRules = [
+//	'/':                              ['permitAll'],
+	'/index':                         ['permitAll'],
+	'/index.gsp':                     ['permitAll'],
+	'/**/js/**':                      ['permitAll'],
+	'/**/css/**':                     ['permitAll'],
+	'/**/images/**':                  ['permitAll'],
+	'/**/favicon.ico':                ['permitAll']
+]
+

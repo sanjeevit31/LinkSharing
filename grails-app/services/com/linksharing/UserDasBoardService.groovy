@@ -1,7 +1,6 @@
 package com.linksharing
 
 import grails.transaction.Transactional
-import linksharing.Person
 
 @Transactional
 class UserDasBoardService {

@@ -1,11 +1,43 @@
-class BootStrap {
+import com.linksharing.BootStrapService
+import com.linksharing.User
+import com.linksharing.UserRole
+import com.linksharing.Role
+import com.linksharing.Topic
 
+class BootStrap {
+    def springSecurityService
+     BootStrapService bootStrapService
     def init = { servletContext ->
-        if (linksharing.Person.count() == 0) {
-            new linksharing.Person(firstName: 'EXAMPLE APPLICATIONS John', lastName: 'Doe', age: 20).save()
-            new linksharing.Person(firstName: 'Jane', lastName: 'Smith', age: 18).save()
-            new linksharing.Person(firstName: 'Simple Scott', lastName: 'Robinson', age:42).save()
+        def userRole = Role.findByAuthority('ROLE_USER') ?: new Role(authority: 'ROLE_USER').save(failOnError: true)
+        def adminRole = Role.findByAuthority('ROLE_ADMIN') ?: new Role(authority: 'ROLE_ADMIN').save(failOnError: true)
+
+        List<User> users =   bootStrapService.userEntry()
+
+        if(users){
+            users.each { it->
+
+                if(it.username=='admin'){
+                    if (!it.authorities.contains(adminRole)) {
+                        UserRole.create it, adminRole,true
+                    }
+                }
+                else{
+                    if (!it.authorities.contains(userRole)) {
+                        UserRole.create it, userRole,true
+                    }
+                }
+            }
         }
+
+        List<Topic> topics  =   bootStrapService.topicEntry(users)
+        println topics
+        println users
+
+
+        bootStrapService.subscriberEntry(topics,users)
+
+
+
     }
     def destroy = {
     }

@@ -1,0 +1,96 @@
+ Create Application LinkSharing 
+- Push to Git 
+- Change DataSouce.groovy to use mysql 
+    String countryName
+    String countryCode
+   static hasMany = [state: State]
+- Turn on logging
+
+
+ Create domain model for linksharing 
+- Constraints 
+- Email of should be a email type cannot be blank and null, it can never be repeated
+- Each user can subscribe a topic only one time 
+- Topic name is must and topic name can never be repeated 
+- Title of a resource can occur only one time in within a topic 
+- Summary of a resource cannot be greater than 1024 characters 
+- FileName and contentType of a document resource can never be blank or null 
+- Url in linkresource must be a valid url
+
+
+
+Create actions in a UtilController to do the following 
+- Create two users, add one topic to each user and subscribe them to the topic created 
+- For each topic, create 10 link resources 
+- Randomly mark 3 items as read for each user 
+- Fetch the list of all unread items for a given user id and print/log them to console
+
+
+ Create a LoginController that will handle all login related functionality 
+- Create a login page with basic html 
+- Create a action loginHandler in user controller which sets session user 
+- Create Admin Controller and create an action named "stats" in it 
+- Create a simple view and render the following information: Number of Users and their number of subscriptions 
+- Use Scaffolding to generate controllers and views for all domain classes 
+- Use beforeInterceptor to render "Access Denied" if the user is not admin@intelligrape.com and trying to access the action "stats"
+
+*************************************KOMAL*******************************************************
+Create a simple view for the stats action and pass the information to the view in the model 
+- Modify the main layout and update the link to point to the home of application 
+- Show all reading items of a user (read and unread both) in a table. [Each reading item should be part of another template] 
+- Apply the main layout to all created pages 
+- Create a dashboard action in user controller which will act as the home page when a user logs in 
+- Populate unread items, subscribed topics & owned topics and Show the list on dashboard page.
+
+
+*********************************roni*********************************************************************
+ Create a TagLib ApplicationTagLib with namespace "ls" 
+- Create a tag "unreadItems" which will take in an attribute count, and show at max that many unread items in a table 
+- Create a tag subscribedTopics which shows the list of subscribed topics on the dashboard. Refactor to make the table on - Topic List into a template and use it here 
+- Create a tag to show the list of owned topics. Use the same template from the last exercise 
+- Show unread items in bold 
+- Add a mark as read link on each unread reading item 
+- Add a tag formattedDate which will be used across the application to show formatted date.
+
+******************************MOHIT******************************************************************************
+ Create custom validator for validating password with confirm password 
+- Change summary field in Resource to text type 
+- Change mappings in resource domain to have different tables for children tables
+
+********************************GAUTAM*******************************************************************************
+ Register action in user controller	
+* Copy the create user form to register gsp	
+* Remove unnecessary fields if any	
+* Create a registerHandler which validates the data and creates a user	
+* In topic details page, create a form with 5 emails address boxes	
+* Create a command object, create an action to validate the input.
+
+
+********************************MOHIT************************************************************************************
+Create one document resource for each topic 
+- Upload/Download document resource 
+- Create a filter to block access to all controller actions except 'login handler' login, register and register handler for not logged in user 
+- Take User to login page with a message Login to the System if the user is not logged in 
+- Provide a server side check to allow only pdf documents to be uploaded. If any other file is uploaded, report back an error on the view.
+
+
+*******************************LAUKENDRTA***************************************************
+ Move all the bootstrapping code to BootstrapService 
+- Log all the email ids entered in "Send Invite" functionality using a non transactional service 
+- Move the code for Topic subscription to a transactional service(ReadingItem list updation MUST happen) 
+- Move the code for Topic creation and subscribing the user automatically to a transactional service 
+- Save some domain objects in a service method and deliberately throw an exception to understand transaction rollback analogy 
+- Refactor your code and move as much transaction related work to the service layer from controllers
+
+*******************************MANOJ************************************************************
+Show the highest subscribed public topics on User Dashboard. 
+- Show the most read Items for the topics subscribed by a user.
+
+****************************Avinash Verma****************************
+ Use mailService to send invite emails to the email ids entered and sent to sendInviteService 
+- Create a job which runs every month/week at a specific time. Based on the Subscription seriousness being verySerious/serious respectively, send an alert email to each user specifying a list of 10 unread items for that particular subscription 
+- Application should send Mail to all the Users every morning at 8:00AM, this mail should contain new Resources added the previous day for the topics the user has subscribed with seriousness "Very Serious". Resources should be clickable, and on clicking user is taken to the resource page in the application. UI Tip:It will be better if you group the resources by topic in the mail sent
+
+************************Gaurav babla**************************************88
+Install the plugins that are available in FireBug: FirQuery, jQuerify, FireCookie 
+- Optimize the application and make UI adjustments with the help of FireBug.
