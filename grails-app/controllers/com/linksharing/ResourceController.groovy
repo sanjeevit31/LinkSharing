@@ -25,10 +25,6 @@ class ResourceController {
     def create() {
         User user = springSecurityService.getCurrentUser()
         Map map = [:]
-        println 'from create of resource controller' + params
-        params.userid = session.userid
-        println 'from create of resource controller' + params
-
         respond new Resource(params),model: [user:user]
     }
 
@@ -39,8 +35,8 @@ class ResourceController {
 
         if (type != null && !type.equals('')) {
             if (type.equals('Document')) {
-                resourceImplService.upload(servletContext, request, type, params)
-
+                String filePath =   resourceImplService.upload(servletContext, request, type, params?.topic?.id)
+                params.file_path= filePath
                 resourceInstance.properties = params;
 
             }

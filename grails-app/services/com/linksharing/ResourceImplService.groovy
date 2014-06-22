@@ -15,39 +15,26 @@ class ResourceImplService {
     def serviceMethod() {
 
     }
-  public Map upload(ServletContext servletContext,HttpServletRequest request,String type,GrailsParameterMap params){
+  public Map upload(ServletContext servletContext,HttpServletRequest request,String type,long topicId){
+      String filePath=''
       try{
           CommonsMultipartFile commonsMultipartFile= request.getFile('url_path')
-          println commonsMultipartFile.contentType
-          println commonsMultipartFile.empty
-          println commonsMultipartFile.name   //url_path
-          println commonsMultipartFile.originalFilename//imgae name
-          println commonsMultipartFile.size
-          println   request.getContextPath()
-         String topicName= Topic.findById(params.topic.id).name
+          String topicName= Topic.findById(topicId).name
           String contextpath= servletContext.getRealPath(request.getContextPath())
-
           SimpleDateFormat dd=new SimpleDateFormat('ddMMyyyyHHmmss')
-          String str=dd.format(new Date())
-          println str
-          File file=new File(contextpath+File.separator+'ResourcesImg'+File.separator+topicName+File.separator+str+commonsMultipartFile.originalFilename)
-          println file.getAbsolutePath()
-          println    file.mkdirs()
+          String date=dd.format(new Date())
+          File file=new File(contextpath+File.separator+'ResourcesImg'+File.separator+topicName+File.separator+date+commonsMultipartFile.originalFilename)
+          file.mkdirs()
           commonsMultipartFile.transferTo(file)
-
-          println      file.createNewFile()
-          println file
-
-          params.url_path=file.getAbsolutePath()
+          file.createNewFile()
+          filePath = file.getAbsolutePath()
 
       }
       catch (Exception e){
         println 'from exception of upload'
       }
 
-
-
-     map
+    return filePath
 
   }
 
