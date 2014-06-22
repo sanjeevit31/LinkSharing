@@ -156,6 +156,7 @@ class UserController {
     def resetPasswordForm() {
     }
 
+    //reset Password Link Creation
     @Secured(['permitAll'])
     @Transactional(readOnly = false)
     def resetPassword() {
@@ -169,6 +170,7 @@ class UserController {
             render 'Wrong EmailId'
     }
 
+    //form after click on reset Link
     @Transactional(readOnly = false)
     def resetPaswordChange() {
         println 'from user action resetPaswordChange'
@@ -186,6 +188,7 @@ class UserController {
             render 'invalid Link'
     }
 
+    //password change using reset link
     @Transactional(readOnly = false)
     def passwordChange() {
         println 'from user action passwordChange'
@@ -197,18 +200,20 @@ class UserController {
             render 'wrong user'
     }
 
-    def changePassword1() {
+    //password change form from userprofile
+    def changePasswordForm() {
         User user = springSecurityService.getCurrentUser()
         if (user)
             model: [user: user]
     }
 
+    //password change from userprofile
     @Transactional(readOnly = false)
-    def changePassword2() {
-        Map map = [oldPassword: params.oldPassword, newPassword: params.newPassword, confirmPassword: params.confirmPassword, userId: (springSecurityService.principal.id)]
+    def changeUserPassword() {
+        Map map = [oldPassword: params.oldPassword, newPassword: params.newPassword, confirmPassword: params.confirmPassword, userId: (springSecurityService.getCurrentUser().id)]
         map = User.changePassword(map)
         println map
-        render view: 'changePassword2', model: ['status': (map.status)]
+        render view: 'changeUserPassword', model: ['status': (map.status)]
     }
 
 }

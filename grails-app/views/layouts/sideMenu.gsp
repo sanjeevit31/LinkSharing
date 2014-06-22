@@ -45,7 +45,7 @@
                 <ul>
                     <li><g:link controller="user" action="edit"><i
                             class="fa fa-angle-right leftNavIcon"></i>Edit Profile</g:link></li>
-                    <li><g:link controller="user" action="changePassword1"><i
+                    <li><g:link controller="user" action="changePasswordForm"><i
                             class="fa fa-angle-right leftNavIcon"></i>Change Password</g:link></li>
                     <li><g:link controller="logout" action="index"><i
                             class="fa fa-angle-right leftNavIcon"></i>Logout</g:link></li>
